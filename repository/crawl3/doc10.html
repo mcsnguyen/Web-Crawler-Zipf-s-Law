@@ -1,0 +1,1791 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:fb="http://ogp.me/ns/fb#" xmlns:og="http://opengraphprotocol.org/schema/">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+  <script type="text/javascript">
+   window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);
+  </script>
+  <meta content="en" http-equiv="Content-Language"/>
+  <meta content="notranslate" name="google"/>
+  <link href="https://sportshub.cbsistatic.com" rel="preconnect dns-prefetch"/>
+  <link href="https://sportsfly.cbsistatic.com" rel="preconnect dns-prefetch"/>
+  <link href="https://sports.cbsimg.net" rel="preconnect dns-prefetch"/>
+  <title>
+   NCAA Football - College Football News, Scores, Stats, Standings, and Rumors - CBSSports.com
+  </title>
+  <meta content="NCAA Football - College Football News, Scores, Stats, Standings, and Rumors - CBSSports.com" itemprop="name"/>
+  <meta content="CBS Sports has the latest College Football news, live scores, player stats, standings, fantasy games, and projections." name="description"/>
+  <meta content="CBS Sports has the latest College Football news, live scores, player stats, standings, fantasy games, and projections." itemprop="description"/>
+  <link href="https://www.cbssports.com/college-football/" rel="canonical"/>
+  <meta content="CBSSports.com" property="og:site_name"/>
+  <meta content="NCAA Football - College Football News, Scores, Stats, Standings, and Rumors" property="og:title"/>
+  <meta content="CBS Sports has the latest College Football news, live scores, player stats, standings, fantasy games, and projections." property="og:description"/>
+  <meta content="https://sportsfly.cbsistatic.com/fly-121/bundles/sportsmediacss/images/fantasy/default-article-image-large.gif" property="og:image"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://www.cbssports.com/college-football/" property="og:url"/>
+  <meta content="25902406772" property="fb:pages"/>
+  <meta content="297742330311988" property="fb:app_id"/>
+  <meta content="100002967552623" property="fb:admins"/>
+  <meta content="https://www.facebook.com/cbssports" property="article:publisher"/>
+  <meta content="14885860" property="twitter:account_id"/>
+  <meta content="CBSSports.com features live scoring and news for NFL football, MLB baseball, NBA basketball, NHL hockey, college basketball and football. CBSSports.com is also your source for fantasy sports news." name="msapplication-tooltip"/>
+  <meta content="https://www.cbssports.com/" name="msapplication-starturl"/>
+  <meta content="width=1024;height=768" name="msapplication-window"/>
+  <meta content="#1483b2" name="msapplication-navbutton-color"/>
+  <link href="android-app://com.handmark.sportcaster/cbssportsapp/https://www.cbssports.com/college-football/" rel="alternate"/>
+  <meta content="EdjXVFTZ6BgUzS3Void8cMiXXzE6bXDvNg-Yjl3VZj8" name="google-site-verification"/>
+  <meta content="NOODP" name="googlebot"/>
+  <link href="https://www.cbssports.com/college-football/2/" rel="next"/>
+  <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+  <link href="https://sportsfly.cbsistatic.com/fly-121/bundles/sportsmediacss/images/core/webclips/touch-icon-iphone.png" rel="apple-touch-icon"/>
+  <link href="https://sportsfly.cbsistatic.com/fly-121/bundles/sportsmediacss/images/core/webclips/touch-icon-ipad.png" rel="apple-touch-icon" sizes="76x76"/>
+  <link href="https://sportsfly.cbsistatic.com/fly-121/bundles/sportsmediacss/images/core/webclips/touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="120x120"/>
+  <link href="https://sportsfly.cbsistatic.com/fly-121/bundles/sportsmediacss/images/core/webclips/touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="152x152"/>
+  <link href="https://sportsfly.cbsistatic.com/fly-121/bundles/sportsmediacss/css/main.desktop.css" rel="stylesheet"/>
+  <link href="https://sportsfly.cbsistatic.com/fly-121/bundles/sportsmediacss/css/icon-moon/icon-moon.css" rel="stylesheet"/>
+  <script src="https://sportsfly.cbsistatic.com/fly-121/bundles/sportsmediajs/js-build/libs/require-2.3.5.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   require.config({"baseUrl":"https:\/\/sportsfly.cbsistatic.com\/fly-121\/bundles\/sportsmediajs\/js-build","config":{"version":{"fly\/components\/accordion":"1.0","fly\/components\/alert":"1.0","fly\/components\/base":"1.0","fly\/components\/carousel":"1.0","fly\/components\/dropdown":"1.0","fly\/components\/fixate":"1.0","fly\/components\/form-validate":"1.0","fly\/components\/image-gallery":"1.0","fly\/components\/iframe-messenger":"1.0","fly\/components\/load-more":"1.0","fly\/components\/load-more-article":"1.0","fly\/components\/load-more-scroll":"1.0","fly\/components\/loading":"1.0","fly\/components\/marketing-slider":"1.0","fly\/components\/modal":"1.0","fly\/components\/modal-iframe":"1.0","fly\/components\/network-bar":"1.0","fly\/components\/poll":"1.0","fly\/components\/search-player":"1.0","fly\/components\/social-button":"1.0","fly\/components\/social-counts":"1.0","fly\/components\/social-links":"1.0","fly\/components\/tabs":"1.0","fly\/components\/video":"1.0","fly\/libs\/easy-xdm":"2.4.17.1","fly\/libs\/jquery.cookie":"1.2","fly\/libs\/jquery.throttle-debounce":"1.1","fly\/libs\/jquery.widget":"1.9.2","fly\/libs\/omniture.s-code":"1.0","fly\/utils\/jquery-mobile-init":"1.0","fly\/libs\/jquery.mobile":"1.3.2","fly\/libs\/backbone":"1.0.0","fly\/libs\/underscore":"1.5.1","fly\/libs\/jquery.easing":"1.3","fly\/managers\/ad":"2.0","fly\/managers\/components":"1.0","fly\/managers\/cookie":"1.0","fly\/managers\/debug":"1.0","fly\/managers\/geo":"1.0","fly\/managers\/gpt":"4.3","fly\/managers\/history":"2.0","fly\/managers\/madison":"1.0","fly\/managers\/social-authentication":"1.0","fly\/managers\/tealium":"1.0","fly\/utils\/data-prefix":"1.0","fly\/utils\/data-selector":"1.0","fly\/utils\/function-natives":"1.0","fly\/utils\/guid":"1.0","fly\/utils\/log":"1.0","fly\/utils\/object-helper":"1.0","fly\/utils\/string-helper":"1.0","fly\/utils\/string-vars":"1.0","fly\/utils\/url-helper":"1.0","libs\/jshashtable":"2.1","libs\/select2":"3.5.1","libs\/jsonp":"2.4.0","libs\/jquery\/mobile":"1.4.5","libs\/modernizr.custom":"2.6.2","libs\/velocity":"1.2.2","libs\/dataTables":"1.10.6","libs\/dataTables.fixedColumns":"3.0.4","libs\/dataTables.fixedHeader":"2.1.2","libs\/dateformat":"1.0.3","libs\/waypoints\/infinite":"3.1.1","libs\/waypoints\/inview":"3.1.1","libs\/waypoints\/jquery.waypoints":"3.1.1","libs\/waypoints\/sticky":"3.1.1","libs\/jquery\/dotdotdot":"1.6.1","libs\/jquery\/flexslider":"2.1","libs\/jquery\/lazyload":"1.9.3","libs\/jquery\/maskedinput":"1.3.1","libs\/jquery\/marquee":"1.3.1","libs\/jquery\/numberformatter":"1.2.3","libs\/jquery\/placeholder":"0.2.4","libs\/jquery\/scrollbar":"0.1.6","libs\/jquery\/tablesorter":"2.0.5","libs\/jquery\/touchswipe":"1.6.18","libs\/jquery\/ui\/jquery.ui.core":"1.11.4","libs\/jquery\/ui\/jquery.ui.draggable":"1.11.4","libs\/jquery\/ui\/jquery.ui.mouse":"1.11.4","libs\/jquery\/ui\/jquery.ui.position":"1.11.4","libs\/jquery\/ui\/jquery.ui.slider":"1.11.4","libs\/jquery\/ui\/jquery.ui.sortable":"1.11.4","libs\/jquery\/ui\/jquery.ui.touch-punch":"0.2.3","libs\/jquery\/ui\/jquery.ui.autocomplete":"1.11.4","libs\/jquery\/ui\/jquery.ui.accordion":"1.11.4","libs\/jquery\/ui\/jquery.ui.tabs":"1.11.4","libs\/jquery\/ui\/jquery.ui.menu":"1.11.4","libs\/jquery\/ui\/jquery.ui.dialog":"1.11.4","libs\/jquery\/ui\/jquery.ui.resizable":"1.11.4","libs\/jquery\/ui\/jquery.ui.button":"1.11.4","libs\/jquery\/ui\/jquery.ui.tooltip":"1.11.4","libs\/jquery\/ui\/jquery.ui.effects":"1.11.4","libs\/jquery\/ui\/jquery.ui.datepicker":"1.11.4"}},"shim":{"liveconnection\/managers\/connection":{"deps":["liveconnection\/libs\/sockjs-0.3.4"]},"liveconnection\/libs\/sockjs-0.3.4":{"exports":"SockJS"},"libs\/setValueFromArray":{"exports":"set"},"libs\/getValueFromArray":{"exports":"get"},"fly\/libs\/jquery.mobile-1.3.2":["version!fly\/utils\/jquery-mobile-init"],"libs\/backbone.marionette":{"deps":["jquery","version!fly\/libs\/underscore","version!fly\/libs\/backbone"],"exports":"Marionette"},"fly\/libs\/underscore-1.5.1":{"exports":"_"},"fly\/libs\/backbone-1.0.0":{"deps":["version!fly\/libs\/underscore","jquery"],"exports":"Backbone"},"libs\/jquery\/ui\/jquery.ui.tabs-1.11.4":["jquery","version!libs\/jquery\/ui\/jquery.ui.core","version!fly\/libs\/jquery.widget"],"libs\/jquery\/flexslider-2.1":["jquery"],"libs\/dataTables.fixedColumns-3.0.4":["jquery","version!libs\/dataTables"],"libs\/dataTables.fixedHeader-2.1.2":["jquery","version!libs\/dataTables"],"https:\/\/sports.cbsimg.net\/js\/CBSi\/app\/VideoPlayer\/AdobePass-min.js":["https:\/\/sports.cbsimg.net\/js\/CBSi\/util\/Utils-min.js"]},"map":{"*":{"facebook":"https:\/\/connect.facebook.net\/en_US\/sdk.js","facebook-debug":"https:\/\/connect.facebook.net\/en_US\/all\/debug.js","google":"https:\/\/apis.google.com\/js\/plusone.js","google-platform":"https:\/\/apis.google.com\/js\/client:platform.js","google-csa":"https:\/\/www.google.com\/adsense\/search\/async-ads.js","google-javascript-api":"https:\/\/www.google.com\/jsapi","google-client-api":"https:\/\/apis.google.com\/js\/api:client.js","gpt":"https:\/\/www.googletagservices.com\/tag\/js\/gpt.js","recaptcha":"https:\/\/www.google.com\/recaptcha\/api.js?onload=loadRecaptcha&render=explicit","recaptcha_ajax":"https:\/\/www.google.com\/recaptcha\/api\/js\/recaptcha_ajax.js","twitter":"https:\/\/platform.twitter.com\/widgets.js","mpx":"libs\/tpPdk","tealium":"\/\/tags.tiqcdn.com\/utag\/cbsi\/cbssportssite\/prod\/utag.js","taboola":"https:\/\/cdn.taboola.com\/libtrc\/cbsinteractive-cbssports\/loader.js","sharethrough":"https:\/\/native.sharethrough.com\/assets\/tag.js","newsroom":"https:\/\/c2.taboola.com\/nr\/cbsinteractive-cbssports\/newsroom.js","adobe-pass":"https:\/\/sports.cbsimg.net\/js\/CBSi\/app\/VideoPlayer\/AdobePass-min.js","video-utils":"https:\/\/sports.cbsimg.net\/js\/CBSi\/util\/Utils-min.js"}},"waitSeconds":300});
+  </script>
+  <script type="application/javascript">
+   var GdprFunctions = {
+        /**
+         * Execute a function as a callback once GDPR consent is granted.
+         *
+         * TODO -  See if we can update this method to prevent the stacking of callbacks. Specifically,
+         * if this is called on AJAX events, multiple instances of a single service call (like ad refresh)
+         * could be queued up and all fired at once when the user grants consent. Not currently an issue
+         * since we're assuming user consent by default, but that could change in the near future.
+         */
+        gdpr_consent_callback: function(id, callback, callbackArgs) {
+            if (window.gdprConsent) {
+                window.GdprFunctions.log("Service loading (GDPR consent already granted): " + id);
+                callback.apply(this, callbackArgs);
+            } else {
+                window.GdprFunctions.log("Service pending (GDPR consent not granted): " + id);
+                window.addEventListener('gdpr_consent_granted', function (e) {
+                    /* Remove the listener once it's been executed so that we don't initialize the same script/iframe
+                     * multiple times, even if GDPR consent is granted multiple times.
+                     */
+                    window.removeEventListener('gdpr_consent_granted', callback);
+
+                    window.GdprFunctions.log("Service loading (GDPR consent finally granted): " + id);
+                    window.gdprConsent = true;
+                    callback.apply(this, callbackArgs);
+                }, false);
+            }
+        },
+
+        /** Creates a tag with the specified attributes and body, then injects it after the injection point element. */
+        append_element: function(tagName, injectionPoint, attributes, body) {
+            var element = document.createElement(tagName);
+            for (var attribute in attributes) {
+                var value = attributes[attribute];
+                if (false !== value && null != value && '' !== value) {
+                    element[attribute] = attributes[attribute];
+                }
+            }
+
+            if (null != body) {
+                element.innerHTML = body;
+            }
+            injectionPoint.parentNode.insertBefore(element, injectionPoint.nextSibling);
+        },
+
+        /** Get the value of a cookie by name. */
+        get_cookie_value: function(cookieName) {
+            var cookieValue = window.document.cookie.match('(^|;)\\s*' + cookieName + '\\s*=\\s*([^;]+)');
+            return cookieValue ? cookieValue.pop() : null;
+        },
+
+        //Log to the console w/o exceptions thrown in IE.
+        log: function(message) {
+            if (window.console) {
+                window.console.log(message);
+            }
+        },
+
+        //Trigger a custom event on the specified element.
+        trigger_event: function(element, eventName, payload) {
+            var event;
+            payload = payload || {};
+
+            if ('function' === typeof window.CustomEvent) {
+                // Current W3C standard
+                event = new CustomEvent(eventName, payload);
+                element.dispatchEvent(event);
+            } else if ('function' === typeof window.document.createEvent) {
+                // Fallback for IE and really old browsers
+                event = window.document.createEvent("Event");
+                event.initEvent(eventName, true, true);
+                event.eventName = eventName;
+                element.dispatchEvent(event);
+            }
+        }
+    };
+  </script>
+  <script type="application/javascript">
+   (function () {
+        var gdprCountries = ["at","be","bg","cy","cz","de","dk","ee","es","fi","fr","gb","gr","hr","hu","ie","is","it","li","lt","lu","lv","mt","nl","no","pl","pt","ro","se","si","sk"];
+        var userLocation = JSON.parse(window.GdprFunctions.get_cookie_value('fly_geo'));
+
+        if (null !== userLocation && -1 === gdprCountries.indexOf(userLocation.countryCode)) {
+            window.gdprConsent = true;
+            window.GdprFunctions.log("GDPR gating disabled - user is outside the EU.");
+            return;
+        }
+
+        (function () {
+            window.gdprConsent = false;
+            window.GdprFunctions.log('GDPR gating enabled - initializing Evidon.');
+
+            window.evidon = {};
+            window.evidon.id = 425;
+
+            var evidoncdn = '//c.evidon.com/',
+                cdn = '//sports.cbsimg.net/',
+                rootDomain = 'cbssports',
+                noticecdn = cdn + 'sitenotice/';
+
+            var append = function(id, url, async) {
+                var tag = document.getElementsByTagName('script')[0] || document.head;
+                var script = document.createElement('script');
+                script.id = id;
+                script.src = url;
+                script.async = async;
+                tag.parentNode.insertBefore(script, tag);
+            };
+
+            append('evidon-notice', noticecdn + 'evidon-sitenotice-tag.js', false);
+            append('evidon-location', evidoncdn + 'geo/country.js', false);
+            append('evidon-themes', noticecdn + window.evidon.id + '/snthemes.js', true);
+
+            if (rootDomain) {
+                append('evidon-settings', noticecdn + window.evidon.id + '/' + rootDomain + '/settings.js', true);
+            }
+
+            window.evidon.priorConsentCallback = function () {
+                window.GdprFunctions.log("GDPR consent granted");
+                window.gdprConsent = true;
+                window.GdprFunctions.trigger_event(window, 'gdpr_consent_granted');
+                if (typeof om == 'object' && typeof om.fireGdprTags != 'undefined') {
+                    om.fireGdprTags();
+                }
+            };
+
+            window.evidon.closeCallback = function () {
+                window.GdprFunctions.log("Evidon: Close callback");
+            };
+
+            window.evidon.consentWithdrawnCallback = function () {
+                window.GdprFunctions.log("GDPR consent withdrawn");
+                window.gdprConsent = false;
+                window.GdprFunctions.trigger_event(window, 'gdpr_consent_withdrawn');
+            };
+
+        })();
+    })();
+  </script>
+  <script type="application/javascript">
+   // start of instart js
+        //Copyright Instart Logic Sat Feb 16 2019 - All rights reserved - version: 10.5.28
+function Ha(){var t=window;if(function(){var n=!0,i=!1,e="";try{var r="object"==typeof t.IXC_47_6563255657975002&&t.IXC_47_6563255657975002;if(n=!r||void 0===r.CanRun||"_47_6563255657975002"!==r._47_6563255657975002||r.CanRun("abd"))r=t.IXC_47_6563255657975002=t.IXC_47_6563255657975002||{},r.InitStartTime=(t.performance?t.performance:Date).now(),r._47_6563255657975002="_47_6563255657975002",t.INSTART_TARGET_NAME="abd",t.I12C=t.I12C||{};else{var o=t.INSTART_TARGET_NAME;e="double nanovisor injection: abd after "+o,(i="abd"!==o)&&console.warn(e)}t.INSTART=t.INSTART||{},t.INSTART.Init=function(){i&&console.error("ignored Init call after ",e)},r&&(r.ComputeAll="CENOME_PLACEHOLDER")}catch(t){try{console.error(t)}catch(t){}n=!0}return n}()){!function(){function n(n,i){function e(i){return n.req.a(t.atob(i))}(e("bWVkaWNpbmVuZXQuY29t")||e("b25oZWFsdGguY29t")||e("cnhsaXN0LmNvbQ==")||e("d2VibWQuY29t"))&&n.req.c("firefox")&&i({iadb:{ierelbanenoitcerid:!0}})}function i(){return(i=Object.assign||function(t){for(var n,i=1,e=arguments.length;i<e;i++){n=arguments[i];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(t[r]=n[r])}return t}).apply(this,arguments)}function e(t,n){return(e=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(t,n){t.__proto__=n}||function(t,n){for(var i in n)n.hasOwnProperty(i)&&(t[i]=n[i])})(t,n)}function r(t){return t.split("").filter(function(t,n){return 0==n%2}).reverse().join("")}function o(t){var n=location.origin;n=n+"/g00"+location.pathname,n+=location.search;var i=""===location.search?"?":"&";t&&(n+=i+"i10c.ua="+t,i="&");try{var e=btoa(document.referrer);void 0===(t=void 0)&&(t=40);for(var r=[],o=0,u=0;u<e.length;u++){var c=e.charAt(u);t<u-o||U.test(c)?(r.push("%"+("00"+c.charCodeAt(0).toString(16)).slice(-2)),o=u):r.push(c)}n+=i+"i10c.encReferrer="+r.join("")}catch(t){}return""!==location.hash&&(n+=location.hash),n}function u(t){if(navigator.userAgent){var n=void 0;try{n=t instanceof ReferenceError&&/^\w+$/.test(t.message)}catch(t){n=!0}if(n){try{console.log(t)}catch(t){}n=o(void 0),location.replace(n)}}throw t}function c(t){return function(){try{t.apply(this,arguments)}catch(t){u(t)}}}function a(){if(void 0!==Vt)return Vt;var n=!0;try{if("l2n9s8hg5p"!==t.atob(t.btoa("l2n9s8hg5p")))throw"l2n9s8hg5p";n=!1}catch(t){}return Vt=n}function s(t){return void 0===t&&(t=Bt),1===t.w.iytep}function h(t){return void 0===t&&(t=Bt),4===t.w.iytep}function d(t){return void 0===t&&(t=Bt),2===t.w.iytep}function l(t,n){function i(){this.constructor=t}e(t,n),t.prototype=null===n?Object.create(n):(i.prototype=n.prototype,new i)}function f(t,n){t||(console.error(n),0<(t=[]).length&&console.log(t))}function v(){if(void 0!==zt)return zt;var t=!1,n=Object.getOwnPropertyDescriptor(HTMLFrameElement.prototype,"contentWindow");return(n=n&&n.get&&n.get.toString())&&(t=-1===n.indexOf(K)),zt=t}function b(){var t=0,n=[];for(n.push(Et+"="+Date.now()+";max-age=86400"),n.push(Dt+"=1;max-age=86400"),n.push(St+"="+document.referrer+";path=/;max-age=10");t<n.length;t++)document.cookie=n[t];t=o(Gt.iytep),location.replace(t)}function m(t,n,i){var e=Object.getOwnPropertyDescriptor(t,n)||{};if(!1!==e.writable){e.writable=!1,e.value=i;try{Object.defineProperty(t,n,e)}catch(t){}}else f(e.value===i,n+" is already defined on object with different value");return i}function p(t,n,i){try{t[n]=i}catch(t){}return i}function y(n,i,e){n=n.split("."),e=e?m:p;for(var r,o=t||{},u=0;u<n.length-1;++u){r=n[u];try{o=e(o,r,o[r]||{})}catch(t){}}if(r=n[n.length-1],o){f(!!r,"In Export, name not defined");try{e(o,r,i)}catch(t){}}}function R(t,n){try{y(J+"."+t,n)}catch(t){}try{y($+"."+t,n)}catch(t){}try{y("IXC_47_6563255657975002."+t,n)}catch(t){}}function L(){for(var t=[],n=0;n<arguments.length;n++)t[n]=arguments[n];Pt?t.forEach(function(t){return t(Pt)}):Ut=Ut.concat(t)}function w(n,i){Pt=n;var e=!0;try{Ut.forEach(function(t){e=t(n)&&e});var r=i&&t[i];r&&r instanceof Array&&(r.forEach(function(t){e=t(n)&&e}),r.push=L)}catch(t){e=!1}return e}function g(t,n,i,e,r){if(t||(t={}),i||(i={}),n)for(var o=Object.keys(n),u=o.length-1;0<=u;--u){var c=o[u],a=t[c];a=(void 0===a?$t:r&&r[c]||e)(a,n[c]),i[c]=a}return i}function N(t,n){return function(i,e){return null===e||"object"!=typeof e||e instanceof RegExp?e:Array.isArray(e)?!Array.isArray(i)&&i?(console.error("Error while attempting to merge an array "+e+" with a non-array "+i),e):t(i,e):n(i,e)}}function _(t,n){return g(t,n,t,$t,void 0)}function E(t,n){for(var i=0;i<n.length;i++)t=g(t,n[i],t,$t,void 0);return t}function D(t,n){var i=n&&E({},n);return function(n,e){return g(n,e,n,t,i)}}function S(t,n){return g(t,n,t,qt,void 0)}function Y(t,n){return g(t,n,t,Kt,void 0)}function T(t,n){return t?n?function(){t.apply(this,arguments),n.apply(this,arguments)}:t:n}function j(t){var n=rn[t]?rn[t]:null;if(n)return F(n);if(!(n=on.exec(""+t)))return{ihcseme:null,iedercslaitn:null,imodnia:null,ioptr:null,ihtapeman:t,iuqyre:null,igarftnem:null};var i=F(n={ihcseme:H(n[1]),iedercslaitn:H(n[2]),imodnia:H(n[3]),ioptr:H(n[4]),ihtapeman:H(n[5]),iuqyre:W(n[6]),igarftnem:W(n[7])}),e=Object.keys(rn);return 0!==e.length&&e.length>en-1&&delete rn[e[e.length%en]],rn[t]=i,n}function H(t){return"string"==typeof t&&0<t.length?t:null}function W(t){return"string"==typeof t?t:null}function F(t){return{ihcseme:t.ihcseme,iedercslaitn:t.iedercslaitn,imodnia:t.imodnia,ioptr:t.ioptr,ihtapeman:t.ihtapeman,iuqyre:t.iuqyre,igarftnem:t.igarftnem}}function Z(t){return{ihcseme:t[0],iedercslaitn:t[1],imodnia:t[2],ioptr:t[3],ihtapeman:t[4],iuqyre:t[5],igarftnem:t[6]}}function k(t,n){return t===n}function O(t,n){return null===t?t===n:t.toLowerCase()===n.toLowerCase()}function M(t,n){return null!==t&&void 0!==t&&n.test(t)}function x(t,n){for(var i=0;i<t.length;i++)if(t[i]===n)return!0;return!1}function C(t){for(var n=Object.keys(t),i=Array(n.length),e=0;e<n.length;e++){var r=n[e];i[t[r]]=r}return i}function V(t,n){if(void 0===n&&(n=bi),"string"!=typeof t.url){var i=t.url.itegferh()||"";t.url=i||t.url}else i=t.url;var e=new n.Fa;if(t.onload&&(e.onload=function(){return t.onload(new fi(e,t))}),t.onerror&&(e.onerror=function(){return t.onerror(new fi(e,t))}),e.withCredentials=!!t.credentials,t.cb&&e.overrideMimeType(t.cb),n.Ta.call(e,t.method,i,!1!==t.async),t.T)for(i=0;i<t.T.length;i++)e.setRequestHeader(t.T[i].ianem,t.T[i].Ya);i=t.body&&("string"==typeof t.body?t.body:JSON.stringify(t.body));var r=!1===t.async;try{n.Wa.call(e,i)}catch(n){r&&t.onerror&&t.onerror(null)}return r?new fi(e,t):null}function A(t){return t[Tt]||t[Ft]===ht}function B(t,n,i){var e;return e={},e[Ft]=t,e[Tt]=n,t=e,i&&(t[jt]=i),t}function G(t,n){var i="";if(t){var e=t.indexOf(n);-1<e&&(t=t.slice(e),n=n.replace(/[.]/g,"[.]").replace(/\$/g,"[$]"),(t=new RegExp("(?:\\b"+n+"\\b\\s*=\\s*)([^;]*);?").exec(t))&&t[1]&&(i=t[1]))}return i}function X(){var t={};try{if(z(Ot)){var n=sessionStorage._47_6563255657975002;n&&(t=JSON.parse(n))}}catch(t){}return t}function z(n){try{var i=t[n];return i.setItem("TEST","TEST"),i.removeItem("TEST"),!0}catch(t){return!1}}function I(){return new ji(c(function(t){var n=c(function(n){var i=!1;"load"===n.type?i=!1:"error"===n.type&&(i=!0),t(B(ct,i,n.currentTarget.src))}),i=document.createElement("img");i.onload=n,i.onerror=n,n=Math.floor(Math.random()*wi.length),i.src=wi[n]+"?"+Hi[Math.floor(Math.random()*Hi.length)],1<wi.length&&wi.splice(n,1)}))}function Q(t,n,i,e,r){return new ji(c(function(o){var u="script"===t?ut:at,a=h();if(s()||a||d()){var l;a&&(l=setTimeout(c(function(){o(B(u,!1,"Timed out on error"))}),500));var f=!1,v=c(function(t){if(!f){f=!0,a&&clearTimeout(l);var n=!1;"load"===t.type?n=!1:"error"===t.type&&(n=!0),o(B(u,n,t.currentTarget.href)),b&&b.parentNode&&b.parentNode.removeChild(b)}}),b=document.createElement("link");b.onload=v,b.onerror=v,b.rel=r||d()?"prefetch":"preload",b.as=t,i&&b.setAttribute("crossorigin","anonymous"),e&&b.setAttribute("referrerpolicy","no-referrer"),v=Math.floor(Math.random()*n.length),b.href=n[v],Ti&&Ti.parentNode?Ti&&Ti.parentNode&&Ti.parentNode.insertBefore(b,Ti):document.head.appendChild(b),1<n.length&&n.splice(v,1)}else o(B(u,!1,"Neither Chrome nor Safari"))}))}function P(t){return new ji(c(function(n){var i=t&&t.iadb&&t.iadb.ithdekcolbstnemelelm&&0<t.iadb.ithdekcolbstnemelelm.length?t.iadb.ithdekcolbstnemelelm:Wi,e=document.createElement("div");e.innerHTML=i[Math.floor(Math.random()*i.length)];var r=e.firstElementChild;r.style.width="1px",r.style.height="1px",r.style.top="-555px",r.style.left="-555px",r.style.display="block";var o=setInterval(c(function(){document&&document.body&&(document.body.appendChild(r),clearInterval(o),setTimeout(c(function(){var t,i=getComputedStyle(r),e=!1;("none"===i.display||(t=i.getPropertyValue("-moz-binding"))&&-1!==t.indexOf("abp-elemhidehit"))&&(e=!0),n(B(bt,e)),r&&r.parentNode&&r.parentNode.removeChild(r)}),200))}),10)}))}var U=/[^A-Za-z0-9\-_.]/,J=r("C22315I0"),$=r("C61117I5");r("T7R3A6T6S3N1I3");var q=r("d7e1r2i2f9_9d3a3o5l6n3o2_8e4l7g8o7o1g2"),K=r("e7d9o0c2 9e5v5i7t7a5n0"),tt=r("k3c6a1b4l1l9a5C9d2b1A6r1e3t0s1i7g3e6R1"),nt=r("E2B5U1O2Y1");r("B0U6O5Y7"),r("P2B8A9");var it=r("B3A4");r("S1T1A7T1S8B2D8A2"),r("G5D5A1");var et=r("P5C8X3E0"),rt=r("X8L1O1V3");r("E8N5O1N3");var ot=r("E4V5A7R2B7"),ut=r("T6P1I4R7C3S3B3"),ct=r("G1M1I6B0"),at=r("L5M6T5H3B9"),st=r("I8R8U3D1A2D2E2K5C8O9L1B5"),ht=r("E4M6A8R7F1B6");r("D3E2T5S1E3U9Q5E6R1D8A9P8F9D2");var dt=r("D1E0D1A7O3L1P9F2D5"),lt=r("E2L1B6A3W5E2I1V5P7F3D3"),ft=r("E8G8N6A2H0C0W2E7I9V6P7F1D4"),vt=r("D7E8R1E0D2N1E3R7P3F2D1"),bt=r("T2N8E8M2E8L2E7"),mt=r("D3F1"),pt=r("T6S3I2H7"),yt=r("I9R4U3D6A5D9E3D1A6O2L0"),Rt=r("K0R6O5W8T8E1N2"),Lt=r("O8F1N6I7G2I9S9N8O5N1");r("S2T2A2T1S7D6I4B9E5R7P5"),r("S3T8S2E2T2G1I4S5N8O6N8T2P3R4");var wt=r("T5L6U0S0E2R0D1E3R3O5T6S9"),gt=r("T9N3E8S6E5R6P6"),Nt=r("T9O7N4"),_t=r("Y9D6A7E0R8T2O1N8"),Et=r("e0t4u2o6r2.2h799r703m8"),Dt=r("c40810i6h9p3r2o7m0"),St=r("r2e2r1r1e7f0e9r2.2c40711i8");r("e7t8a7t5S6h2p9r6o0M3"),r("d7e0k2c1o9l3b6"),r("d1e7k9c8o3l8b6n9u1");var Yt=r("/1)2]6z5-9a198-702[3]699-909[7g0:3?1(2/6^5"),Tt=r("d9e4t2c8e4t6e0D6"),jt=r("n9o1s8a6e2R6"),Ht=r("s8t4l1u3s5e5R2"),Wt=r("y9c5n3e4t3a5L4n3o3i8t5c9e1t5e7D7"),Ft=r("e7p3y5T2"),Zt=r("D2E4D3A8O9L6_9V0"),kt=r("D9E0D9A7O7L2T1O0N0_5V3"),Ot=r("e6g3a7r7o3t2S2n6o3i2s2s7e3s5"),Mt=r("d8f5c40619i3"),xt=r("l1r2u6d0b1a0t1e9g0.4c00212i0");r("k7c4a8b3l4l3a7c6a5h9c3t7p3a9c3"),r("a8h1c5t4p7a4c3e6r7g9"),r("o4x161N805Y4P4k0d3S5V2k534J7V6v5x31431N168X5q4k4e0v3M5f2Z5z4t7H6"),r("e6i8k0o3o9c2"),r("b0d6d1d8b5.4c60413i1"),r("e5m6o8r1h0c3"),r("i7s6c7"),r("T9d2a3o3l8n0o2"),r("n4o2i9s8s8i4m1r6e8p5"),r("s4n9o2i4s1s6i5m0r4e1p8"),r("y8r8e9u0q0"),r("d3e4i3n5e9d6"),r("t2p4m4o0r9p8"),r("r8e3v4i8r2d8b9e7w9"),r("k9c1i4l9c9"),r("t8r3a0t2s5h0c4u1o0t6"),r("s1s6e0r4p6y9e6k8"),r("e3v8o1m3e9s7u1o5m1"),r("l1l3o9r2c7s8"),r("t0u9p2n4i7"),r("e5t9s5a2p3"),r("n8o3i9t8o3m1e6c1i1v4e9d2"),r("m3o4t1n9a2h1p7_6"),r("m1o7t2n0a3h3P8l2l2a4c3"),r("s6j5m2o7t2n5a0h7p6");var Ct=t.IXC_47_6563255657975002;Ct||(Ct=t.IXC_47_6563255657975002={}),Ct.oa=u;var Vt=void 0,At=function(){function t(t){this.w=this.la(t,[{h:/MSIE\s([\d]+)(\.([\d]+))?(\.([\d]+))?/,iytep:3},{h:/Edge\/([\d]+)(\.([\d]+))?(\.([\d]+))?/,iytep:5},{h:/Trident.*rv:([\d]+)(\.([\d]+))?(\.([\d]+))?/,iytep:3},{h:/Chrome\/([\d]+)(\.([\d]+))?(\.([\d]+))?/,iytep:1},{h:/Firefox\/([\d]+)(\.([\d]+))?(\.([\d]+))?/,iytep:2},{h:/Version\/([\d]+)(\.([\d]+))?(\.([\d]+))?.*Safari/,iytep:4}])||{iytep:0,N:0,X:0,W:0},this.pa=this.la(t,[{h:/Android\s([\d]+)(\.([\d]+))?(\.([\d]+))?/,iytep:1},{h:/CPU OS ([\d]+)(_([\d]+))?(_([\d]+))?/,iytep:2},{h:/CPU iPhone OS ([\d]+)(_([\d]+))?(_([\d]+))?/,iytep:2},{h:/Mac OS X ([\d]+)(_([\d]+))?(_([\d]+))?/,iytep:3},{h:/Windows NT ([\d]+)(.([\d]+))?(.([\d]+))?/,iytep:4},{h:/Linux [a-z]*([\d]+)(_([\d]+))?(_([\d]+))?/,iytep:5},{h:/CrOS [a-z]*([\d]+)(_([\d]+))?(_([\d]+))?/,iytep:5}])||{iytep:0,N:0,X:0,W:0}}return t.prototype.la=function(t,n){for(var i=0;i<n.length;++i){var e=n[i],r=e.h.exec(t);if(null!==r)return{iytep:e.iytep,N:parseInt(r[1])||0,X:parseInt(r[3])||0,W:parseInt(r[5])||0}}return{iytep:0,N:0,W:0,X:0}},t}(),Bt=new At("undefined"!=typeof navigator&&navigator.userAgent?navigator.userAgent:""),Gt=Bt.w,Xt=function(t){function n(){var n=t.call(this)||this;return n.wa=!1,t.prototype.v.call(n,function(){}),n}return l(n,t),n.prototype.M=function(t){return function(){if(!this.wa){for(var n=0,i=t.length;n<i;++n)t[n].apply(this,arguments);this.wa=!0}}},n}(function(t){function n(){var n=t.call(this)||this;return t.prototype.v.call(n,function(){n.Sa=this,n.na=arguments}),n}return l(n,t),n.prototype.M=function(n){var i=this,e=t.prototype.M.call(this,n);return function(){e.apply(this,arguments),i.Xa()}},n.prototype.v=function(n){this.na?n.apply(this.Sa,this.na):t.prototype.v.call(this,n)},n}(function(){function t(){this.l=this.R}return t.prototype.R=function(){},t.prototype.M=function(t){return function(){for(var n=0,i=t.length;n<i;++n)t[n].apply(this,arguments)}},t.prototype.v=function(t){if(this.l===this.R)this.l=t;else if(this.l!==this.va){var n=this.ea;n||(n=this.ea=[this.l,t],this.l=this.va=this.M(n))}else this.ea.push(t)},t.prototype.Xa=function(){this.l!==this.R&&(this.l!==this.va?this.l=this.R:this.ea.length=0)},t}())),zt=void 0,It=new Xt,Qt=s()&&a()&&v();It.l(Qt);var Pt,Ut=[];R(tt,L),a()&&It.v(function(t){t&&(t={},t[Ht]=[],t[Wt]=0,t[Tt]=!0,w(t)&&b())});var Jt=/webcache[.]googleusercontent[.]com|cc[.]bingj[.]com|web[.]archive[.]org/i,$t=N(function(t,n){return n.slice()},_),qt=N(function(t,n){return t.concat(n)},S),Kt=N(function(t,n){return t.concat(n.filter(function(n){return 0>t.indexOf(n)}))},Y),tn=Object.create(null,{Version:{value:"10.5.28",writable:!1,configurable:!1,enumerable:!0}}),nn=function(t,n,i){var e=this,r=_(i||{},tn);this.i=function(i,e,o,u){e=new t(e);var c=Object.create(r);return o&&(c=n(c,o)),i(e,function(t){return t?n(c,t):c}),u&&(c=n(c,u)),c},this.ra=function(){},this.ComputeAll=function(t,n,i){return e.i(e.ra,t,n,i)}},en=5,rn={},on=/^(?:([^:/?#]+):)?(?:\/\/+(?:([^/?#]*)@)?([^/?#:@]*)(?::([0-9]+)?)?)?([^?#]+)?(?:\?([^#]*))?(?:#(.*))?$/,un=/[#\/\?@]/g,cn=/[#\/\?]/g,an=/[#\?]/g,sn=/[#]/g,hn=/(\/|^)(?:[^./][^/]*|\.{2,}(?:[^./][^/]*)|\.{3,}[^/]*)\/\.\.(?:\/|$)/,dn=/^([/])?(?:\.\.(?:[/]|$))+/,ln=/(^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$)|([^.]+[.](?:([^.]{2}[.][^.]{2})|([^.]+))$)/,fn=/[^.]+[.](no|com|co|io|it|de|net|org|fr|one|tv|today|fm|kr|jp|com[.]au|co[.]uk|ca)$/,vn=/^([^=]*)(?:=(.*))?$/,bn=function(){function t(t){t&&(this.israpirude="string"==typeof t?j(t):t),this.israpirude||(this.israpirude={ihcseme:null,iedercslaitn:null,imodnia:null,ioptr:null,ihtapeman:null,iuqyre:null,igarftnem:null}),this.iacehc={o:null,iironig:null,F:null,I:null,K:null,m:[null]}}return t.prototype.itegferh=function(){var t;if(!(t=this.iacehc.o)){var n="";null!==(t=this.israpirude).ihcseme&&(n+=t.ihcseme+":"),null!==t.imodnia&&(n+="//",null!==t.iedercslaitn&&(n+=t.iedercslaitn+"@"),n+=t.imodnia,null!==t.ioptr&&(n+=":"+t.ioptr)),null!==t.ihtapeman&&(n+=t.ihtapeman),null!==t.iuqyre&&(n+="?"+t.iuqyre),null!==t.igarftnem&&(n+="#"+t.igarftnem),t=this.iacehc.o=n}return t},t.prototype.iotegnigir=function(){var t=this.iacehc;if(!t.iironig){var n="",i=this.istegemehc();this.icurtssilruderut()||!i?(i&&(n+=i+":"),(i=this.itegtsoh())&&(n+="//"+i),t.iironig=""!==n?n:null):t.iironig="null"}return t.iironig},t.prototype.istegemehc=function(){return this.israpirude.ihcseme},t.prototype.iosbasilruetul=function(){return!!this.israpirude.ihcseme&&!!this.israpirude.imodnia},t.prototype.icurtssilruderut=function(){var t=this.israpirude.ihcseme;return null!==t&&("http"===t||"https"===t||"ftp"===t)},t.prototype.istesemehc=function(t){return null!==t&&un.test(t)?this:(this.israpirude.ihcseme=t?t.toLowerCase():null,t=this.iacehc,t.o=null,t.iironig=null,this)},t.prototype.irpteglocoto=function(){var t=this.istegemehc();return t&&t+":"},t.prototype.iderctegslaitne=function(){return this.israpirude.iedercslaitn},t.prototype.iderctesslaitne=function(t){return null!==t&&un.test(t)?this:(this.israpirude.iedercslaitn=t,this.iacehc.o=null,this)},t.prototype.itegtsoh=function(){var t=this.iacehc;if(!t.F){var n="",i=this.idtegniamo();i&&(n+=i,(i=this.itegtrop())&&(n+=":"+i)),t.F=""!==n?n:null}return t.F},t.prototype.idtegniamo=function(){return this.israpirude.imodnia},t.prototype.idtesniamo=function(t){return null!==t&&cn.test(t)?this:(this.israpirude.imodnia=t,(t=this.israpirude.ihtapeman)&&"/"!==t[0]&&(this.israpirude.ihtapeman="/"+t),t=this.iacehc,t.o=null,t.iironig=null,t.F=null,t.I=null,t.K=null,this)},t.prototype.iamodtoorkcehcehcacdltdnani=function(){var t=this.iacehc;if(!t.I){var n=this.idtegniamo();if(n){var i=fn.exec(n);i?(t.I=i[0],t.K=i[1]):(i=ln.exec(n))&&(t.I=i[0],(t.K=i[4]||null)||(t.K=i[3]))}}},t.prototype.ielpottegniamodlev=function(){return this.iamodtoorkcehcehcacdltdnani(),this.iacehc.K},t.prototype.ioortegniamodt=function(){return this.iamodtoorkcehcehcacdltdnani(),this.iacehc.I||this.idtegniamo()},t.prototype.itegtrop=function(){return this.israpirude.ioptr},t.prototype.itestrop=function(t){if(t){if((t=Number(t))!==(65535&t))return this;this.israpirude.ioptr=""+t}else this.israpirude.ioptr=null;return t=this.iacehc,t.o=null,t.iironig=null,t.F=null,this},t.prototype.iteghtap=function(){var t="",n=this.iaptegemanht();return n&&(t+=n),(n=this.iqtegyreu())&&(t+="?"+n),(n=this.irftegtnemga())&&(t+="#"+n),""!==t?t:null},t.prototype.iaptegemanht=function(){return this.israpirude.ihtapeman},t.prototype.iaptesemanht=function(n,i){if(n){if(an.test(n))return this;n=!i||!this.icurtssilruderut()&&this.istegemehc()?n:t.Ea(n),this.israpirude.ihtapeman=this.israpirude.imodnia&&"/"!==n[0]?"/"+n:n||null}else this.israpirude.ihtapeman=null;return this.iacehc.o=null,this},t.prototype.izilamronemanhtape=function(){return this.iaptesemanht(this.israpirude.ihtapeman,!0)},t.prototype.isteghcrae=function(){var t=this.iqtegyreu();return t&&"?"+t},t.prototype.iqtegyreu=function(){return this.israpirude.iuqyre},t.prototype.iqtesyreu=function(t){return null!==t&&sn.test(t)?this:(this.israpirude.iuqyre=t,t=this.iacehc,t.o=null,t.m=[null],this)},t.prototype.iteghsah=function(){var t=this.irftegtnemga();return t&&"#"+t},t.prototype.irftegtnemga=function(){return this.israpirude.igarftnem},t.prototype.irftestnemga=function(t){return this.israpirude.igarftnem=t,this.iacehc.o=null,this},t.prototype.iqddayreu=function(t){var n=t;return this.israpirude.iuqyre&&(n=this.israpirude.iuqyre+"&"+t),this.iqtesyreu(n)},t.prototype.ieuqddamarapyr=function(t,n){return this.iqddayreu(n?t+"="+n:t)},t.prototype.iarapkcehcehcacretem=function(){var t=this.iacehc;if(1===t.m.length&&null===t.m[0]){var n=this.israpirude.iuqyre;if(n){for(var i=[],e=-1,r=0,o=(n=n.split("&")).length;r<o;++r){var u=vn.exec(n[r]);u&&(i[++e]=u[1],u[2]||""===u[2]?i[++e]=u[2]:i[++e]=null)}t.m=i}else t.m=[]}},t.prototype.iapllatessretemar=function(t){for(var n="",i="",e=t.length,r=0;r<e;){var o=t[r++],u=t[r++];n+=i+o,i="&",(u||""===u)&&(n+="="+u)}return this.iqtesyreu(n||null)},t.prototype.iemaraptesseulavret=function(t,n){"string"==typeof n&&(n=[n]),this.iarapkcehcehcacretem();for(var i,e=0,r=this.iacehc.m,o=[],u=0,c=r.length;u<c;u+=2)t===r[u]?(i=!0,e<n.length&&o.push(t,n[e++])):o.push(r[u],r[u+1]);for(;e<n.length;)o.push(t,n[e++]);return(0<e||i)&&this.iapllatessretemar(o),this},t.prototype.ipevomerretemara=function(t){return this.iemaraptesseulavret(t,[])},t.prototype.iapllategsretemar=function(){return this.iarapkcehcehcacretem(),this.iacehc.m.slice(0,this.iacehc.m.length)},t.prototype.iemaraptegseulavret=function(t){this.iarapkcehcehcacretem();for(var n=this.iacehc.m,i=[],e=0,r=n.length;e<r;e+=2)t===n[e]&&i.push(n[e+1]);return i},t.prototype.imaraptegeulavrete=function(t){this.iarapkcehcehcacretem();for(var n=this.iacehc.m,i=0,e=n.length;i<e;i+=2)if(t===n[i])return n[i+1];return null},t.Ea=function(t){t=t.replace(/(^|\/)\.(?:\/|$)/g,"$1").replace(/\/{2,}/g,"/");for(var n;(n=t.replace(hn,"$1"))!=t;t=n);return t=t.replace(dn,"$1")},t.prototype.itumetaercwodahselba=function(n){return new(n=n||t)(Object.create(this.israpirude))},t.prototype.ierfeze=function(){return Object.freeze(this.israpirude),this},t.prototype.ilceno=function(){return new t({ihcseme:this.israpirude.ihcseme,iedercslaitn:this.israpirude.iedercslaitn,imodnia:this.israpirude.imodnia,ioptr:this.israpirude.ioptr,ihtapeman:this.israpirude.ihtapeman,iuqyre:this.israpirude.iuqyre,igarftnem:this.israpirude.igarftnem})},t.prototype.iiresezila=function(){var t=this.israpirude;return[t.ihcseme,t.iedercslaitn,t.imodnia,t.ioptr,t.ihtapeman,t.iuqyre,t.igarftnem]},t}(),mn=function(){function t(t){this.u=t instanceof bn?t:new bn(t&&Z(t))}return t.prototype.a=function(t){return k(this.u.ioortegniamodt(),t)},t.prototype.scheme=function(t){return k(this.u.istegemehc(),t)},t.prototype.domain=function(t){return k(this.u.idtegniamo(),t)},t.prototype.bb=function(t){return M(this.u.idtegniamo(),t)},t.prototype.pathname=function(t){return k(this.u.iaptegemanht(),t)},t.prototype.eb=function(){return M(this.u.iqtegyreu(),/abdtrigger/)},t.prototype.S=function(t){return x(this.u.iemaraptegseulavret("abdtrigger"),t)},t.prototype.port=function(t){return k(this.u.itegtrop(),t)},t.prototype.href=function(t){return k(this.u.itegferh(),t)},t}(),pn={ie:3,chrome:1,edge:5,firefox:2,safari:4};C(pn);var yn={android:1,ios:2,mac:3,windows:4,linux:5};C(yn);var Rn=function(t){function n(n){(n=n||{}).headers=n.headers||{};var i=n.uri,e=n.url;return(i=i instanceof bn?i:new bn(i?Z(i):e?j(e):void 0)).idtegniamo()||(e=new bn("//"+n.headers.host),i.idtesniamo(e.idtegniamo()),i.itestrop(e.itegtrop())),i=t.call(this,i)||this,i.b=n,n=n.headers["i-resutnega"],i.P=n?new At(n):Bt,i}return l(n,t),n.prototype.Ma=function(t){var n=this.b.headers;return n&&n[t]||null},n.prototype.ia=function(){var t=this.b.headers;return t&&t.cookie||""},n.prototype.ma=function(t,n,i){return void 0!==(t=t.N)&&(void 0===n||n<=t)&&(void 0===i||t<=i)},n.prototype.method=function(t){return this.b.method===t},n.prototype.xa=function(t,n){return O(this.Ma(t),n)},n.prototype.host=function(t){return this.xa("host",t)},n.prototype.ab=function(t){return M(this.ia(),t)},n.prototype.cookie=function(t,n){return-1!==this.ia().indexOf(t)&&this.ab(new RegExp(t+"s*=[^;]*"+n+"[^;]*"))},n.prototype.c=function(t,n,i){return void 0===(t=pn[t])&&(t=0),this.P.w.iytep===t&&this.ma(this.P.w,n||Number.MIN_VALUE,i||Number.MAX_VALUE)},n.prototype.ya=function(t){return void 0===(t=yn[t])&&(t=0),this.P.pa.iytep===t&&this.ma(this.P.pa,Number.MIN_VALUE,Number.MAX_VALUE)},n}(mn),Ln=function(t){void 0===t&&(t={}),this.b=t},wn=function(t){void 0===t&&(t=""),this.b=t},gn=function(t){function n(){return null!==t&&t.apply(this,arguments)||this}return l(n,t),n.prototype.itnuocedocyr=function(t){return this.b.itnuocedocyr===t},n}(Ln),Nn=function(t){function n(){return null!==t&&t.apply(this,arguments)||this}return l(n,t),n.prototype.iecivedylimaf=function(t){return this.b.iecivedylimaf===t},n}(Ln),_n=function(t){function n(n){void 0===n&&(n={});var i=t.call(this,n)||this;return i.igoe=new gn(n.igoe),i.ivedeci=new Nn(n.ivedeci),i}return l(n,t),n}(Rn),En={Version:function(t){return console.error("Version cannot be changed from "+t),t},ilgo:S,itemscir:S},Dn=new nn(Rn,S).i,Sn=E({},[En,{icitylanagifnoc_s:Y,iscitylanatropsnart_:S,ireggolgifnoc:Y,itreggoltropsnar:S,icirtemgifnoc:Y,itcirtemtropsnar:_,if_nohcte:T}]),Yn=D($t,[Sn]),Tn=function(){function t(t){this.ua=t||[]}return t.prototype.domain=function(t){t=t.replace(/[\/\\^$*+?.()|[\]{}]/g,"\\$&");t:{var n=this.ua;t=new RegExp("^(?:(?:[^:/?#]+):)?(?://("+t+"))(?:$|[:/?#])");for(var i=0;i<n.length;i++){var e=n[i];if(e&&t.test(e)){n=!0;break t}}n=!1}return n},t.prototype.href=function(t){return x(this.ua,t)},t}(),jn=function(t){function n(){return null!==t&&t.apply(this,arguments)||this}return l(n,t),n.prototype.pattern=function(t,n){return M(this.b,new RegExp("\\b"+t.toString()+"="+(n?n.toString():"")+"\\b"))},n}(wn),Hn=new nn(function(t){void 0===t&&(t={}),this.scripts=new Tn(t.scripts),this.cookie=new jn(t.value)},D(qt,[{ier_eikoocretlif_da:qt}])).i,Wn=function(t){function n(){return null!==t&&t.apply(this,arguments)||this}return l(n,t),n.prototype.pattern=function(t,n){return M(this.b,new RegExp("^"+t.toString()+"="+(n?n.toString():"")+"\\b"))},n}(wn),Fn=new nn(function(t){void 0===t&&(t={}),this.scripts=new Tn(t.scripts),this.cookie=new Wn(t.value)},D($t,[{irw_eikoocretlif_eti:S}])).i,Zn=D(qt,[{ikooc_nodaer_ei:T,ikooc_noetirw_ei:T}]),kn=new nn(function(){function t(t){void 0===t&&(t={}),this.b=t}return t.prototype.on_event=function(t){return this.b.event===t},t}(),S).i,On=D(qt,[{ieilc_notneve_tn:T}]),Mn=new nn(Rn,S).i,xn=D(qt,[{iedoced_notseuqer_d:T}]),Cn=new nn(function(t){function n(){return null!==t&&t.apply(this,arguments)||this}return l(n,t),n}(Ln),S).i,Vn=D(qt,[{iedoced_notseuqer_d:T}]),An=new nn(Rn,S).i,Bn=function(t){function n(){return null!==t&&t.apply(this,arguments)||this}return l(n,t),n.prototype.headerValue=function(t){var n=this.b.headers;return n&&n[t]||null},n.prototype.xa=function(t,n){return O(this.headerValue(t),n)},n}(Ln),Gn=new nn(Bn,S).i,Xn=new nn(Bn,S).i,zn=D(S,[{ier_noesnops:T,iaertspu_noesnopser_m:T,iertspu_notseuqer_ma:T,irapyreuqecalperma:qt}]),In=D($t,[{i_irurefed:_,ii_irueniln:_,iart_iruremrofsn:S,itcelloc_irustats_frep_:_,i_iruepyt:_}]),Qn=new nn(mn,In).i,Pn=D($t,[{uri:T}]),Un=function(t){function n(){return null!==t&&t.apply(this,arguments)||this}return l(n,t),n.prototype.tagName=function(t){return this.b&&this.b.TagName===t},n}(Ln),Jn=function(t){function n(){return null!==t&&t.apply(this,arguments)||this}return l(n,t),n.prototype.pattern=function(t){return M(this.b,t)},n}(wn),$n=function(t){function n(){return null!==t&&t.apply(this,arguments)||this}return l(n,t),n.prototype.contentType=function(t){return this.b.ContentType===t},n}(Ln),qn=new nn(function(t){void 0===t&&(t={}),this.uri=new mn(t.uri),this.tag=new Un(t.tag),this.str=new Jn(t.str),this.meta=new $n(t.meta)},D($t,[{i_irurefed:_,ii_irueniln:_,iart_iruremrofsn:S,itcelloc_irustats_frep_:_,i_iruepyt:_,imrofsnartelbatnoita:S,irttnetnocremrofsna:S,ini_gatnoitcej:S}])).i,Kn=D($t,[Sn,{ialc:Zn,inv:On,igolreg:S,ihsdadlei:xn,iobxot:Vn,impp:_,ieis:_,irpyxo:zn,irmu:S,ieikooctcelfer:S,iciruotpyr:_,iletdayrteme:_,iosivonanecivres_r:S,imarfieerte:_,ierbusecruos:Pn,iobustcejb:T,i_emonececivres:_,ipa_emonececivres_i:_,iipa_cabrecivres_:_,alert:S,its_lmthgnimaer:qt,i_seipa:_,iitylanaatad_sc:_}]),ti=function(t){function n(){return null!==t&&t.apply(this,arguments)||this}return l(n,t),n.prototype.applicationName=function(t){return this.b.applicationName===t},n.prototype.applicationVersion=function(t){return this.b.applicationVersion===t},n.prototype.instanceName=function(t){return this.b.instanceName===t},n.prototype.$a=function(t){return"object"==typeof this.b.attributes?this.b.attributes[t]:void 0},n.prototype.attribute=function(t,n){return this.$a(t)===n},n}(Ln),ni=function(t){function n(){var n=null!==t&&t.apply(this,arguments)||this;return n.env=new ti(n.b.env),n}return l(n,t),n}(Ln),ii={ietupmochctefno:Dn};new nn(ni,Yn);var ei=function(t){function n(){var n=null!==t&&t.apply(this,arguments)||this;return n.req=new _n(n.b.req),n.inp=new _n(n.b.inp),n}return l(n,t),n}(ni),ri=i({},{ixorpetupmocesnopsernoy:Xn,ilcetupmoctnevetnei:kn},ii,{iolcaetupmocdaereikoocn:Hn,iolcaetupmocetirweikoocn:Fn,isetupmoctcejbobu:qn,ibusetupmociruecruoser:Qn,inoyxorpetupmoctseuqermaertspu:An,iunoyxorpetupmocesnopsermaertsp:Gn,idleihsdaetupmoctseuqerdedocedno:Mn,inoxotobetupmoctseuqerdedoced:Cn,inovnetupmoctnevetneilc:kn}),oi=function(t){function n(){return t.call(this,ei,Kn,ri)||this}return l(n,t),n}(nn);new nn(ei,Kn,ri);var ui=new oi,ci=ui.ComputeAll;ui.ra=function(i,e){(i.req.c("chrome",46,1e3)||i.req.c("safari",10,1e3))&&e({iadb:{ierelbanenoitcerid:!0}}),(i.req.c("chrome",46,1e3)||i.req.c("firefox",38,1e3)||i.req.c("safari",10,1e3)||i.req.c("ie",10,1e3)&&document&&10>document.documentMode||i.req.c("edge",12,1e3))&&e({iadb:{idelbanenoitcete:!0}}),e({iadb:{ivetatselbaira:"MorphState",iolbetatseulavdekc:"blocked",ilbtonetatseulavdekco:"not-blocked",iycnetalelbairav:"Abdt",iircsdekcolbmunsrotcetedkniltp:4,isdekcolbnamregmunsrotcetedkniltpirc:0,imthdekcolbmunsrotcetedknill:4,ihtnemelemunsrotcetededi:4,iidekcolbmunsrotcetedgm:4,inoitceteddlohserht:3,ilufelbanenoitcetedl:!0,iyrotsihelbanenoitceriderrof:!1,irotsihmundlohserhty:1,iawirudatsilhct:[/(?:pubads[.])|(?:prebid[.]js)|(?:openx[.]net)|(?:googlesyndication[.](?:net|com))|(?:indexww[.]com)|(?:[.]adnxs[.]com)/i],itemeletdbatniopdneyr:"/g00/2_d3d3LmJvc3Rvbi5jb20%3D_/TU9SRVBIRVVTOCRodHRwOi8vY3AtaW4ubmFub3Zpc29yLmlvL2NsaWVudHByb2ZpbGVyL2FkYj9pMTBjLm1hcmsuc2NyaXB0LnR5cGU%3D_$/$/$",iceriderelbasidnoissesrofnoit:!1,isabnoitceriderelbanesrotcetedkniltpircsde:!0,ietedtratsemitnoitc:0,iofetavitcarekcolbynar:!0}}),i.req.c("safari",10,1e3)&&e({iadb:{icolbdaslru_k:"https://s0.2mdn.net/ads/richmedia/studio/pv2/60282074/20170720084443516/script.js https://cdn.doubleverify.com/dv-match4.js https://cdn.springserve.com/vd/vd0.2.82.8.js https://cdn.revcontent.com/build/css/rev2.min.css https://c.betrad.com/a/n/269/635.js https://s0.2mdn.net/6440533/1495124845208/Raise%20Your%20Hands_728x90/global.min.css".split(" ")}}),(i.req.c("firefox",38,1e3)||i.req.c("safari",10,1e3)||i.req.c("ie",10,1e3)&&document&&10>document.documentMode||i.req.c("edge",12,1e3))&&e({iadb:{ilufelbanenoitcetedl:!1,iyrotsihelbanenoitceriderrof:!1,iceriderelbasidnoissesrofnoit:!1}}),i.inp.host("www.101x.com")&&e({iadb:{ithdekcolbstnemelelm:['<div data-size="970x90">',"<div amp4ads>"]}}),(i.req.domain(t.atob("d3d3LmxpZmV3aXJlLmNvbQ=="))||i.req.domain(t.atob("d3d3LnRoZWJhbGFuY2UuY29t"))||i.req.domain(t.atob("d3d3LnRoZXNwcnVjZS5jb20="))||i.req.domain(t.atob("d3d3LnRob3VnaHRjby5jb20="))||i.req.domain(t.atob("d3d3LnRyaXBzYXZ2eS5jb20=")))&&(e({iadb:{iyrotsihelbanenoitceriderrof:!1,isabnoitceriderelbanesrotcetedkniltpircsde:!1,ilufelbanenoitcetedl:!1,ihtnemelemunsrotcetededi:0,iidekcolbmunsrotcetedgm:0,ietedtratsemitnoitc:300}}),i.req.eb()&&(i.req.S("300")&&e({iadb:{ietedtratsemitnoitc:300}}),i.req.S("500")&&e({iadb:{ietedtratsemitnoitc:500}}),i.req.S("dcl")&&e({iadb:{ietedtratsemitnoitc:"DOMContentLoaded"}}),i.req.S("load")&&e({iadb:{ietedtratsemitnoitc:"load"}}))),i.req.a(t.atob("cG9wc2NpLmNvbQ=="))&&e({iadb:{isabnoitceriderelbanesrotcetedkniltpircsde:!1}}),!i.req.a(t.atob("Y25ldC5jb20="))||i.req.host(t.atob("d3d3LmNuZXQuY29t"))||i.req.host(t.atob("dGVzdC5jbmV0LmNvbQ=="))||i.req.host(t.atob("ZG93bmxvYWQuY25ldC5jb20="))||i.req.host(t.atob("ZG93bmxvYWQuc3RhZ2UuY25ldC5jb20="))||e({iadb:{idelbanenoitcete:!1}}),i.req.c("firefox")&&i.req.host(t.atob("dGVzdC5jbmV0LmNvbQ=="))&&e({iadb:{ierelbanenoitcerid:!0}}),i.req.host(t.atob("d3d3LmNuZXQuY29t"))&&e({iadb:{inietatseulavti:"detecting"}}),i.req.a(t.atob("aG9tZXMuY29t"))&&i.req.c("firefox",54,1e3)&&e({iadb:{ierelbanenoitcerid:!0}}),i.req.a(t.atob("ZWRtdW5kcy5jb20="))&&i.req.c("firefox",54,1e3)&&e({iadb:{ierelbanenoitcerid:!0}}),i.req.a(t.atob("dHJlbmQtY2hhc2VyLmNvbQ=="))&&i.req.c("firefox",54,1e3)&&e({iadb:{ierelbanenoitcerid:!0}}),i.req.host(t.atob("d3d3LmxvbGtpbmcubmV0"))&&e({iadb:{ilufelbanenoitcetedl:!0,iyrotsihelbanenoitceriderrof:!0,iawirudatsilhct:[/(?:mb[.]zam)/i]}}),i.req.host(t.atob("d3d3LmxvbGtpbmcubmV0"))&&i.req.cookie("i10cfd","1")&&e({iadb:{iyrotsihelbanenoitceriderrof:!0,iawirudatsilhct:[/(?:mb[.]zam)/i]}}),(i.req.host(t.atob("d3d3Lm1zbi5jb20="))||i.req.host(t.atob("aW50MS5tc24uY29t")))&&e({iadb:{ivetatselbaira:"Abd",iolbetatseulavdekc:1,ilbtonetatseulavdekco:0,isabnoitceriderelbanesrotcetedkniltpircsde:!1,itemeletdbatniopdneyr:"//tu9srvbirvvtocrjcc1pbi5uyw5vdmlzb3iuaw80.g00.msn.com/g00/2_d3d3LmJvc3Rvbi5jb20%3D_/TU9SRVBIRVVTOCRodHRwOi8vY3AtaW4ubmFub3Zpc29yLmlvL2NsaWVudHByb2ZpbGVyL2FkYj9pMTBjLm1hcmsuc2NyaXB0LnR5cGU%3D_$/$/$"}}),(i.req.host(t.atob("d3d3Lm1zbi5jb20="))||i.req.host(t.atob("aW50MS5tc24uY29t")))&&(i.req.c("firefox")||i.req.c("edge"))&&e({iadb:{ierelbanenoitcerid:!0}}),i.req.host(t.atob("d3d3Lm1zbi5jb20="))&&(i.req.c("chrome",46,1e3)||i.req.c("safari",10,1e3))&&e({iadb:{ilufelbanenoitcetedl:!0,ierelbanenoitcerid:!0,iyrotsihelbanenoitceriderrof:!0,iceriderelbasidnoissesrofnoit:!1,iawirudatsilhct:[/(?:cdn[.]3lift[.]com)|(?:ib[.]3lift[.]com\/ttj)|(?:widgets[.]outbrain[.]com\/external\/publishers\/msn\/MSNOBCore[.]min[.]js)|(?:cdn[.]taboola[.]com\/libtrc\/msn-home-network\/loader[.]js)|(?:cdn[.]taboola[.]com\/libtrc\/msn-section-network\/loader[.]js)|(?:h6[.]msn[.]com\/nativeads\/ms-nativeads-msn[.]min[.]js)|(?:at[.]atwola[.]com)|(?:pixel[.]advertising[.]com)/i]}}),(i.req.host(t.atob("d3d3Lm1zbi5jb20="))||i.req.host(t.atob("aW50MS5tc24uY29t")))&&t&&1===t["ad-instart2"]&&e({iadb:{ierelbanenoitcerid:!1}}),i.req.host(t.atob("bnYuY29t"))&&e({iadb:{iircsdekcolbmunsrotcetedkniltp:4,isdekcolbnamregmunsrotcetedkniltpirc:4,imthdekcolbmunsrotcetedknill:0,ihtnemelemunsrotcetededi:4,iidekcolbmunsrotcetedgm:4,inoitceteddlohserht:16,ierelbanenoitcerid:!1,ilufelbanenoitcetedl:!1,iyrotsihelbanenoitceriderrof:!1}}),(i.req.a(t.atob("Y2FsZ2FyeWhlcmFsZC5jb20="))||i.req.a(t.atob("Y2FsZ2FyeXN1bi5jb20="))||i.req.a(t.atob("Y2FuYWRhLmNvbQ=="))||i.req.a(t.atob("Y2Fub2UuY29t"))||i.req.a(t.atob("ZWRtb250b25qb3VybmFsLmNvbQ=="))||i.req.a(t.atob("ZWRtb250b25zdW4uY29t"))||i.req.a(t.atob("ZmFjZW9mZi5jb20="))||i.req.a(t.atob("ZmluYW5jaWFscG9zdC5jb20="))||i.req.a(t.atob("aG9ja2V5aW5zaWRlb3V0LmNvbQ=="))||i.req.a(t.atob("bGVhZGVycG9zdC5jb20="))||i.req.a(t.atob("bGZwcmVzcy5jb20="))||i.req.a(t.atob("bW9udHJlYWxnYXpldHRlLmNvbQ=="))||i.req.a(t.atob("bmF0aW9uYWxwb3N0LmNvbQ=="))||i.req.a(t.atob("b3R0YXdhY2l0aXplbi5jb20="))||i.req.a(t.atob("b3R0YXdhc3VuLmNvbQ=="))||i.req.a(t.atob("dGhlZ2lmdGd1aWRlLmNh"))||i.req.a(t.atob("dGhlcHJvdmluY2UuY29t"))||i.req.a(t.atob("dGhlc3RhcnBob2VuaXguY29t"))||i.req.a(t.atob("dG9yb250b3N1bi5jb20="))||i.req.a(t.atob("dmFuY291dmVyc3VuLmNvbQ=="))||i.req.a(t.atob("d2luZHNvcnN0YXIuY29t"))||i.req.a(t.atob("d2lubmlwZWdzdW4uY29t")))&&e({iadb:{ilufelbanenoitcetedl:!1,iyrotsihelbanenoitceriderrof:!1}}),i.req.host(t.atob("d3d3LnJhbmtlci5jb20="))&&(i.req.ya("mac")||i.req.ya("windows"))&&e({iadb:{isabnoitceriderelbanesrotcetedkniltpircsde:!1,ierelbanenoitcerid:!0,ilufelbanenoitcetedl:!0,iyrotsihelbanenoitceriderrof:!0}}),i.req.domain(t.atob("d3d3LnN1cGVyY2hldnkuY29t"))&&e({iadb:{iyrotsihelbanenoitceriderrof:!1,isabnoitceriderelbanesrotcetedkniltpircsde:!1,ilufelbanenoitcetedl:!1,ihtnemelemunsrotcetededi:0,iidekcolbmunsrotcetedgm:0,ietedtratsemitnoitc:300}}),(i.req.host(t.atob("dHZ0cm9wZXMub3Jn"))||i.req.host(t.atob("d3d3LnR2dHJvcGVzLm9yZw==")))&&e({iadb:{iofetavitcarekcolbynar:!1,ifetavitcakcolbdaro:!0,irofetavitcasulpkcolbda:!0}}),i.req.a(t.atob("d2FzaGluZ3RvbnBvc3QuY29t"))&&e({iadb:{ilufelbanenoitcetedl:!1,ietedtratsemitnoitc:"DOMContentLoaded",iotelbairavlabolgskcabllacretsiger:"__il_wapo",ierelbanenoitcerid:!1}}),n(i,e),i.req.host(t.atob("d3d3Lndvd2hlYWQuY29t"))&&e({iadb:{ilufelbanenoitcetedl:!0,iyrotsihelbanenoitceriderrof:!0,iawirudatsilhct:[/(?:mb[.]zam)/i]}}),i.req.host(t.atob("d3d3Lndvd2hlYWQuY29t"))&&i.req.cookie("i10cfd","1")&&e({iadb:{iyrotsihelbanenoitceriderrof:!0,iawirudatsilhct:[/(?:mb[.]zam)/i]}}),i.req.c("chrome",46,1e3)&&e({iadb:{iidekcolbmunsrotcetedgm:0}}),i.req.bb(Jt)&&e({iadb:{idelbanenoitcete:!1}}),i.req.cookie("i10c.expt.history","true")&&e({iadb:{iyrotsihelbanenoitceriderrof:!0}})};var ai=null;try{ai=t.IXC_47_6563255657975002.ComputeAll}catch(t){}"function"!=typeof ai&&(ai=ci);var si,hi=si={url:t.location.href,headers:{host:t.location.host,cookie:document.cookie}},di=null;di=ai({env:{},inp:hi,req:si},{});var li=function(){function t(){}return t.prototype.Error=function(){return 100>this.J()||599<this.J()?"Network request failed":null},t}(),fi=function(t){function n(n,i){var e=t.call(this)||this;return e.D=n,e.Za=i,e}return l(n,t),n.prototype.iulr=function(){return this.Za.url},n.prototype.J=function(){return 1223===this.D.status?204:this.D.status},n.prototype.da=function(){return this.D.statusText},n.prototype.Headers=function(){return this.D.getAllResponseHeaders()},n.prototype.iaehred=function(t){return this.D.getResponseHeader(t)},n.prototype.Text=function(){return this.D.responseText},n.prototype.iiresezila=function(){return JSON.stringify({iulr:this.iulr(),Status:this.J(),StatusText:this.da(),Headers:this.Headers(),Text:this.Text()})},n}(li);!function(t){function n(n){var i=t.call(this)||this;return i.C=n,i.ka=null,i}l(n,t),n.prototype.iulr=function(){return this.C.iulr},n.prototype.J=function(){return this.C.J},n.prototype.da=function(){return this.C.da},n.prototype.Headers=function(){return this.C.Headers},n.prototype.iaehred=function(t){var n=this.ka;if(!n){var i=Object.create(null),e=this.Headers();e&&(e.trim().split(/[\r\n]+/).forEach(function(t){var n=t.split(": ");t=n.shift(),n=n.join(": "),t&&(i[t]=n)}),n=i),this.ka=n}return n&&n[t]||null},n.prototype.Text=function(){return this.C.Text},n.prototype.iiresezila=function(){return JSON.stringify(this.C)}}(li);var vi,bi={Fa:XMLHttpRequest,Ta:XMLHttpRequest.prototype.open,Wa:XMLHttpRequest.prototype.send},mi=(vi={},vi[Ft]=rt,vi[Tt]=!1,vi);t.addEventListener("message",function(t){"string"!=typeof(t=t.data)||0!==t.lastIndexOf(Zt,Zt.length+1)&&0!==t.lastIndexOf(kt,kt.length+1)||(mi[Tt]=!0,mi[jt]=t)});var pi;!function(t){t[t.PENDING=0]="PENDING",t[t.FULLFILLED=1]="FULLFILLED",t[t.REJECTED=2]="REJECTED"}(pi||(pi={}));var yi=function(){function t(t){if(!t)throw"no executor provided";if("object"!=typeof this)throw"use new";if("function"!=typeof t)throw"not a function";this.state=pi.qa,this.La(t)}return t.prototype.La=function(t){var n=this;try{t(function(t){n.Va(t)},function(t){n.ta(t)})}catch(t){n.ta(t)}},t.prototype.Va=function(t){this.za&&this.za.call(this,t),this.state=pi.ha},t.prototype.ta=function(t){this.fa&&this.fa.call(this,t),this.state=pi.sa},t.prototype.then=function(n,i){return this.state===pi.qa?(this.fa=i,this.za=n):this.state===pi.ha?n.call(this,void 0):this.state===pi.sa&&i.call(this,void 0),new t(function(){})},t.prototype.catch=function(n){return this.state===pi.qa?this.fa=n:this.state!==pi.ha&&this.state===pi.sa&&n.call(this,void 0),new t(function(){})},t.prototype.all=function(n){var i=Array.prototype.slice.call(n);return new t(function(t,n){function e(o,u){try{if(u&&("object"==typeof u||"function"==typeof u)){var c=u.then;if("function"==typeof c)return void c.call(u,function(t){e(o,t)},n)}i[o]=u,0==--r&&t(i)}catch(t){n(t)}}if(0===i.length)return t([]);for(var r=i.length,o=0;o<i.length;o++)e(o,i[o])})},t}(),Ri=(new bn).idtesniamo(t.location.hostname).ioortegniamodt(),Li={},wi="aHR0cHM6Ly9wYWdlYWQyLmdvb2dsZXN5bmRpY2F0aW9uLmNvbS9mYXZpY29uLmljbw== aHR0cHM6Ly9zMC4ybWRuLm5ldC8xNjM1OTA5LzF4MWltYWdlLmpwZw== aHR0cHM6Ly9jb25uZWN0LmZhY2Vib29rLm5ldC9mYXZpY29uLmljbw== aHR0cHM6Ly9hZHMudHdpdHRlci5jb20vZmF2aWNvbi5pY28= aHR0cHM6Ly93d3cuZ29vZ2xlLWFuYWx5dGljcy5jb20vX191dG0uZ2lm aHR0cHM6Ly90cGMuZ29vZ2xlc3luZGljYXRpb24uY29tL2Zhdmljb24uaWNv aHR0cHM6Ly9zZWN1cmUuZm9vdHByaW50Lm5ldC95aWVsZG1hbmFnZXIvYXBleC9tZWRpYXN0b3JlL2FkY2hvaWNlXzEucG5n".split(" "),gi="aHR0cHM6Ly9jZG4uZmxhc2h0YWxraW5nLmNvbS83MTE5NS8xODkwMTQ2L2pzL3Rpbnlyb29tLmpz aHR0cHM6Ly9jZG4ubWVkaWF2b2ljZS5jb20vbmF0aXZlYWRzL3NjcmlwdC9jYWZlbW9tL3BvbGFyX3RoZXN0aXJfcGlwaW5nLmpz aHR0cHM6Ly9jLmJldHJhZC5jb20vYS9uLzI3OS83ODE3NS5qcw== aHR0cHM6Ly9zY3JpcHRzLmhvc3QuYmFubmVyZmxvdy5jb20vMS4wLjAvd2lkZ2V0Lm1pbi5qcw== aHR0cHM6Ly9zdGF0aWMuZG91YmxlY2xpY2submV0L2luc3RyZWFtL2FkX3N0YXR1cy5qcw== aHR0cHM6Ly9zMC4ybWRuLm5ldC82OTU1NTEyLzE0OTkzNDQxOTMxMjMvd2ViLzMwMHgyNTBfZWRnZS5qcw==".split(" "),Ni="aHR0cHM6Ly9ydGF4LmNyaXRlby5jb20vZGVsaXZlcnkvcnRhL3J0YS5qcw== aHR0cHM6Ly9pYi5hZG54cy5jb20vanB0 aHR0cHM6Ly90bHguM2xpZnQuY29tL2hlYWRlci9hdWN0aW9u aHR0cHM6Ly9hZC55aWVsZGxhYi5uZXQveXAvNTE5NDc4 aHR0cHM6Ly9wYWdlYWQyLmdvb2dsZXN5bmRpY2F0aW9uLmNvbS9wYWdlYWQvanMvZ29vZ2xlX3RvcF9leHAuanM= aHR0cHM6Ly9zZWN1cmUuYWRueHMuY29tL3R0ag==".split(" "),_i=new Xt,Ei=s()&&a()&&!v();_i.l(Ei);var Di=void 0,Si=new Xt,Yi=s()&&(void 0!==Di?Di:Di=!!t[q]);Si.l(Yi);var Ti=t.document.currentScript||t.document.scripts[document.scripts.length-1],ji=t.Promise||yi,Hi="&ad_box_ &ad_channel= &ad_classid= &ad_height= &ad_keyword= &ad_network_ &ad_number= &ad_type= &ad_type_ &ad_url= &ad_zones= &adbannerid=".split(" "),Wi=[["<iframe id='google_ads_frame'>"],["<iframe id='google_ads_iframe'>"],["<div id='ADV-SLOT-'>"],["<div id='YFBMSN'>"],["<div id='google_dfp_'>"],["<div id='MarketGid'>"]],Fi=function(){function n(t){this.H={},this.Config=t,this.s={G:0,Z:0,Y:0},this.Ra=this.Oa(),this.ba=[]}return n.prototype.g=function(t){return this.H[t]},n.prototype.Na=function(){var t=[];t.push(B(Lt,!0,JSON.stringify(this.s)));var n,i=X();for(n in i)t.push(B(n,i[n].A,"STORED:"+JSON.stringify(i[n].B)));i=this.H,Li=X();for(var e in i)Li&&Li[e]?Li[e].A===i[e]?Li[e].B+=1:(Li[e].A=i[e],Li[e].B=1):Li[e]={A:i[e],B:1};for(e in Li)i[e]||delete Li[e];if(e=JSON.stringify(Li),z(Ot))try{sessionStorage._47_6563255657975002=e}catch(t){}return G(document.cookie,Mt)||(document.cookie=Mt+"=1; domain="+Ri+"; path=/"),t},n.prototype.ja=function(){for(var n=[],i=new Date,e=1;6>=e;e++){var r=e+":"+i.getMonth()+":"+e+":"+i.getDate()+":"+e+":"+i.getHours()%2+":"+e,o=xt+"="+e+"&ad_channel=1";r="//hxyzhas.g00."+new bn(t.location.href).ioortegniamodt()+"/g00/"+encodeURIComponent(t.btoa(r))+"/ad?"+o,n.push(r)}return n},n.prototype.Oa=function(){for(var t=[],n=this.Config.iadb.icolbdaslru_k?this.Config.iadb.icolbdaslru_k.slice():this.Config.iadb.isabnoitceriderelbanesrotcetedkniltpircsde?this.ja():gi.slice(),i=Ni.slice(),e=0;e<this.Config.iadb.iircsdekcolbmunsrotcetedkniltp;e++)t.push(Q("track",n,!1,s(),!1));for(e=0;e<this.Config.iadb.isdekcolbnamregmunsrotcetedkniltpirc;e++)t.push(Q("track",i,void 0,void 0,void 0));for(e=0;e<this.Config.iadb.ihtnemelemunsrotcetededi;e++)t.push(P(this.Config));for(e=0;e<this.Config.iadb.iidekcolbmunsrotcetedgm;e++)t.push(I());return this.s.G=t.length,t},n.prototype.Pa=function(){var t=[],n=this.Config.iadb.isabnoitceriderelbanesrotcetedkniltpircsde?this.ja():gi.slice();0<this.Config.iadb.isdekcolbnamregmunsrotcetedkniltpirc&&(n=n.concat(Ni));for(var i=0;i<n.length;i++)t.push(Q("track",n,void 0,void 0,void 0));return this.s.G+=t.length,t},n.prototype.Ga=function(t){this.Ja(t),this.Ha(t),this.Ia(t)},n.prototype.Ja=function(t){function n(n,e){i.H[n]=e,t(B(n,e))}var i=this;It.v(function(t){return n(it,t)}),Si.v(function(t){return n(ot,t)}),_i.v(function(t){return n(nt,t)})},n.prototype.Ha=function(t){for(var n=this,i=0;i<this.s.G;i++)this.Ra[i].then(function(i){return n.ga(i,t)})},n.prototype.Ia=function(n){var i=this;this.Config.iadb.ilufelbanenoitcetedl&&(this.ba=this.Pa(),t.addEventListener("load",c(function(){for(var t=0;t<i.ba.length;t++)i.ba[t].then(function(t){return i.ga(t,n)})})))},n.prototype.ga=function(t,n){if(this.s.Z++,t[Tt]){var i=++this.s.Y;!this.H[Rt]&&i>=this.Config.iadb.inoitceteddlohserht&&(this.H[Rt]=!0)}n(t)},n}();[wi,gi,Ni].forEach(function(n){return n.forEach(function(n,i,e){return e[i]=t.atob(n)})});try{t[J]||y(J,{})}catch(t){}try{t[$]||y($,{})}catch(t){}try{t.IXC_47_6563255657975002||y("IXC_47_6563255657975002",{})}catch(t){}var Zi=function(){function n(t){var n;this.j=(n={},n[Tt]=!1,n[Wt]=0,n[Ht]=[],n),this.Ka=Date.now(),this.$=this.ca=this.L=!1,this.Config=t,this.f=new Fi(t),t.iadb.iceriderelbasidnoissesrofnoit&&!G(document.cookie,"_47_6563255657975002")&&(document.cookie="_47_6563255657975002=1; domain="+Ri+"; path=/"),this.U=this.Config.iadb.iyrotsihelbanenoitceriderrof&&this.Ba()}return n.prototype.V=function(){var t=this.Config.iadb.ierelbanenoitcerid;return G(document.cookie,"_47_6563255657975002")&&(t=!1),t},n.prototype.Ua=function(){var t,n=this.$=!0;try{R(this.Config.iadb.ivetatselbaira,this.L?this.Config.iadb.iolbetatseulavdekc:this.Config.iadb.ilbtonetatseulavdekco),R(this.Config.iadb.iycnetalelbairav,this.j[Wt]);var i=w(this.j,this.Config.iadb.iotelbairavlabolgskcabllacretsiger);this.L&&!this.f.g(ot)&&!this.f.g(nt)&&i&&this.V()&&(this.O(!1),this.aa()),n=!1}catch(i){this.j[Ht].push((t={},t[Ft]=et,t[Tt]=!0,t)),this.O(!0),this.V()&&this.aa(),n=!1}finally{n&&this.V()&&this.aa()}},n.prototype.O=function(n){if(this.ca){this.ca=!0,this.Ca(n),n=this.Config.iadb.itemeletdbatniopdneyr;var i=this.j;if(n)try{var e=[];e=i[Ht]&&(i[Tt]?i[Ht]:i[Ht].filter(A)),mi[Tt]&&e.push(mi);var r={adbType:[i[Tt]?gt:Nt],otherData:JSON.stringify(e),clientIpAddr:"",userAgent:navigator.userAgent,pageUrl:t.location.href,detectionTime:i[Wt]},o={data_stream_type:"adb",json_data:JSON.stringify(r),generated_timestamp_msec:Date.now()};t.navigator.sendBeacon?t.navigator.sendBeacon(n,JSON.stringify(o)):V({method:"POST",url:n,body:o,async:!0,onload:void 0,onerror:void 0,onchange:void 0,T:[{ianem:"Content-type",Ya:"text/plain"}]})}catch(t){}}},n.prototype.Ca=function(t){var n,i;this.Config.iadb.iyrotsihelbanenoitceriderrof&&this.j[Ht].push((n={},n[Ft]=pt,n[Tt]=!0,n)),this.Config.iadb.ilufelbanenoitcetedl&&(this.j[Ht].push((i={},i[Ft]=mt,i[Tt]=!0,i)),t&&(this.j[Ht]=this.j[Ht].concat(this.f.Na())))},n.prototype.Ba=function(){var t,n=X(),i=this.Config.iadb.irotsihmundlohserhty;return n[ht]&&n[ht].A&&n[ht].B>=i&&(t=ht),n[Rt]&&n[Rt].A&&n[Rt].B>=i&&(t=t?t+":"+Rt:Rt),n[st]&&n[st].A&&(t=t?t+":"+st:st),t},n.prototype.Da=function(){var t=!1;if(this.$){var n=this.f.s;n.Z!==n.G||this.Config.iadb.ilufelbanenoitcetedl&&(void 0===this.f.g(vt)||void 0===this.f.g(dt)||void 0===this.f.g(lt)||void 0===this.f.g(ft)||void 0===this.f.g(ht)||void 0===this.f.g(st)||void 0===this.f.g(yt))||(t=!0)}return t},n.prototype.Qa=function(){var t,n=this.Config.iadb.iircsdekcolbmunsrotcetedkniltp+this.Config.iadb.ihtnemelemunsrotcetededi+this.Config.iadb.iidekcolbmunsrotcetedgm+this.Config.iadb.isdekcolbnamregmunsrotcetedkniltpirc,i=this.f.s,e=this.Config.iadb.inoitceteddlohserht,r=void 0!==this.f.g(it)&&void 0!==this.f.g(ot)&&void 0!==this.f.g(nt);return!0===this.f.g(it)||!0===this.f.g(ot)||!0===this.f.g(nt)||i.Y>=e||this.U&&r?(this.U&&this.j[Ht].push((t={},t[Ft]=wt,t[Tt]=!0,t[jt]=this.U,t)),gt):n===i.Z&&i.Y<e&&!1===this.f.g(it)?Nt:_t},n.prototype.Aa=function(){var n=this;t.addEventListener("unload",function(){return n.O(!0)}),this.f.Ga(function(t){n.j[Ht].push(t),n.$?!n.ca&&n.Da()&&n.O(!0):(t=n.Qa())!==_t&&(n.L=t===gt,n.j[Tt]=n.L,n.j[Wt]=Date.now()-n.Ka,n.Ua())})},n.prototype.aa=function(){b()},n}();if(t===top&&!new RegExp(Yt,"i").test(t.location.pathname)&&di.iadb.idelbanenoitcete){var ki=c(function(){new Zi(di).Aa()}),Oi=di.iadb.ietedtratsemitnoitc;Oi?"string"==typeof Oi?t.addEventListener(Oi,ki):t.setTimeout(ki,Oi):ki()}}();var n=t.IXC_47_6563255657975002;n&&n.Init||(n=t.INSTART),n.Init(null)}}try{Ha()}catch(t){try{var yb=window.IXC_47_6563255657975002;yb&&yb.oa&&yb.oa(t)}catch(t){}}
+        // end of instart js
+  </script>
+  <script type="text/javascript">
+   //Set doc domain for video embed crossdomain fix
+    document.domain = "cbssports.com";
+
+            if ((top.location != self.location) && (document.referrer.indexOf("cbssports.com") == -1)) {
+            window.open(location.href, '_top');
+        }
+    
+    window.SportsPageVars = {
+        ads: {
+            enabled: true,
+            data: {"gpt":{"targeting":{"device":"desktop","ptype":"home-arena","cid":"college-football","env":"prod"},"adConfig":{"network":{"local":7336,"dev":7336,"qa":7336,"stage":8264,"prod":8264},"method":"async-inline","regions":[],"adUnits":{"intromercial":{"outOfPage":true},"skin":{"sizes":[[1600,1000]],"position":"top"},"resourceCenterTop":{"sizes":[[300,300]],"position":"top"},"resourceCenterBottom":{"sizes":[[632,160]],"position":"bottom"},"mpuPlusTop":{"sizes":[[300,250],[300,600]],"position":"top"},"marqueeTop":{"sizes":[[234,60]],"position":"top"},"mpuTop":{"sizes":[[300,250]],"position":"top"},"mpuBottom":{"sizes":[[300,250]],"position":"bottom","disableInitialLoad":false},"leaderPlusTop":{"sizes":[[728,90],[970,66],[970,250],[970,90]],"position":"top","eventCallbacks":{"slotRenderEnded":"leaderboardCallback"}},"leaderTop":{"sizes":[[728,90],[970,66],[970,90]],"position":"top","eventCallbacks":{"slotRenderEnded":"leaderboardCallback"}},"buttonTop":{"sizes":[[88,31]],"position":"top"},"skyboxTop":{"sizes":[[5,5]],"position":"top","eventCallbacks":{"slotRenderEnded":"skyBoxCallback"}},"leaderPlus2Bottom":{"sizes":[[728,90],[970,66]],"position":"bottom"},"leaderMiddle":{"sizes":[[728,90],[970,66]],"position":"middle"},"leaderBottom":{"sizes":[[970,66],[728,90]],"position":"bottom"},"mMarqueeTop":{"sizes":[[356,365]],"position":"top"},"mRailTopLeft":{"sizes":[[170,360]],"position":"top"},"mRailBottomLeft":{"sizes":[[170,230]],"position":"bottom"},"mLeaderTop":{"sizes":[[1170,150]],"position":"top"},"mLeaderMiddle":{"sizes":[[1170,150]],"position":"middle"},"mRailTopRight":{"sizes":[[370,345]],"position":"top"},"mStoryInset":{"sizes":[[300,310]],"position":"top"},"mDropdown":{"sizes":[[220,350]],"position":"top"},"mpuMiddle":{"sizes":[[300,250]],"position":"middle"},"mpuTopGametracker":{"sizes":[[300,250]],"position":"top","disableInitialLoad":true,"eventCallbacks":{"slotRenderEnded":"clear20second"}},"sharethroughTop":{"sizes":[[11,11],["fluid"]],"position":"top","customTargeting":{"strnativekey":"a749ea2b"},"eventCallbacks":{"slotRenderEnded":"nativeAdContainerClear"}},"sharethroughBottom":{"sizes":[[11,11],["fluid"],[300,250]],"position":"bottom","customTargeting":{"strnativekey":"a749ea2b"},"eventCallbacks":{"slotRenderEnded":"nativeAdContainerClear"}},"sharethroughArticle":{"sizes":[[11,11],["fluid"]],"position":"top","customTargeting":{"strnativekey":"433f2831"},"eventCallbacks":{"slotRenderEnded":"nativeAdContainerClear"}},"sharethroughScoreboard":{"sizes":[[11,11],["fluid"],[300,250]],"position":"top","customTargeting":{"strnativekey":"1KzYzb2nt1prfLivSYMjVJCV"},"eventCallbacks":{"slotRenderEnded":"nativeAdContainerClear"}},"nativeHqTop":{"sizes":[[11,11],["fluid"]],"position":"top","customTargeting":{"strnativekey":"BAhUjps7CdLL2R6QfFqoXhbT"},"eventCallbacks":{"slotRenderEnded":"nativeAdContainerClear"}},"mpuHomeArenaFlex":{"sizes":[[11,11],["fluid"],[300,250]],"position":"top","customTargeting":{"strnativekey":"pHEZXrGTz8xAczhbvBryALrh"},"eventCallbacks":{"slotRenderEnded":"nativeAdContainerClear"}},"nativeArenaMiddle":{"sizes":[[11,11],["fluid"]],"position":"middle","customTargeting":{"strnativekey":"rSRFToMHkC84SmYyCbF6LsXG"},"eventCallbacks":{"slotRenderEnded":"nativeAdContainerClear"}},"nativeGtTop":{"sizes":[[11,11],["fluid"],[300,250]],"position":"top","customTargeting":{"strnativekey":"3b2acfdb"},"eventCallbacks":{"slotRenderEnded":"nativeAdContainerClear"}},"nativeStoryFlexTop":{"sizes":[[11,11],["fluid"],[300,251]],"position":"top","customTargeting":{"strnativekey":"pUtkm6PEEeEqSsKgmNRVvEGN"},"eventCallbacks":{"slotRenderEnded":"nativeAdContainerClear"}},"nativeStoryFlexMiddle":{"sizes":[[11,11],["fluid"],[300,250]],"position":"middle","customTargeting":{"strnativekey":"pUtkm6PEEeEqSsKgmNRVvEGN"},"eventCallbacks":{"slotRenderEnded":"nativeAdContainerClear"}},"nativeStoryFlexBottom":{"sizes":[[11,11],["fluid"],[300,250]],"position":"bottom","customTargeting":{"strnativekey":"pUtkm6PEEeEqSsKgmNRVvEGN"},"eventCallbacks":{"slotRenderEnded":"nativeAdContainerClear"}},"nativeStoryFlexBottom2":{"sizes":[[11,11],["fluid"],[300,250]],"position":"bottom2","customTargeting":{"strnativekey":"pUtkm6PEEeEqSsKgmNRVvEGN"},"eventCallbacks":{"slotRenderEnded":"nativeAdContainerClear"}},"nativeStoryFlexInc":{"sizes":[[11,11],["fluid"],[300,250]],"position":"inc","disableInitialLoad":true,"customTargeting":{"strnativekey":"pUtkm6PEEeEqSsKgmNRVvEGN"}},"videoThumbnailTop":{"sizes":[[171,231]],"position":"top"},"videoLiveEventSponsor":{"sizes":[[234,60]],"position":"top"},"hqSponsoredShelf":{"sizes":[[150,25]],"position":"top"}},"mobile":{"adUnits":{"intromercial":{"outOfPage":true},"mobileBannerTop":{"sizes":[[320,50]],"position":"top"},"mobileBannerMpuHptoOverlay":{"outOfPage":true},"mobileMpuBottom":{"sizes":[[300,250]],"position":"bottom"},"skyboxTop":{"sizes":[[5,5]],"position":"top","eventCallbacks":{"slotRenderEnded":"skyBoxCallback"}},"mobileHomeFlexTop":{"sizes":[[11,11],["fluid"],[300,250]],"position":"top","customTargeting":{"strnativekey":"FPbxvZ35anf9AJRvNfe6i5bj"}},"mobileHomeFlexSilentMiddle":{"sizes":[[11,11],["fluid"],[300,250]],"position":"middle","customTargeting":{"strnativekey":"4QaKVuofR1D6XYNp5djXh8m5"}},"mobileHomeFlexBottom":{"sizes":[[11,11],["fluid"],[300,250]],"position":"bottom","customTargeting":{"strnativekey":"FPbxvZ35anf9AJRvNfe6i5bj"}},"mobileHomeFlexSilentBottom2":{"sizes":[[11,11],["fluid"],[300,250]],"position":"bottom2","customTargeting":{"strnativekey":"4QaKVuofR1D6XYNp5djXh8m5"}},"mobileArenaFlexSilentMiddle":{"sizes":[[11,11],["fluid"],[300,250],[320,50]],"position":"middle","customTargeting":{"strnativekey":"p19egy6FqHCsS251t1yj2EBy"}},"mobileArenaFlexSilent":{"sizes":[[11,11],["fluid"],[300,250]],"position":"middle","customTargeting":{"strnativekey":"p19egy6FqHCsS251t1yj2EBy"}},"mobileArenaFlexSilentBottom2":{"sizes":[[11,11],["fluid"],[300,250],[320,50]],"position":"bottom2","customTargeting":{"strnativekey":"p19egy6FqHCsS251t1yj2EBy"}},"mobileFlexSilentTop":{"sizes":[[11,11],["fluid"],[300,250]],"position":"top","customTargeting":{"strnativekey":"gubJdWNSqW4KERyShJGTxkGt"}},"mobileFlexTop":{"sizes":[[300,250],[11,11],["fluid"]],"position":"top","customTargeting":{"strnativekey":"UhpLuUjohuTPZ7eAodkse53o"}},"mobileFlexMiddle":{"sizes":[[320,50],[300,250],[11,11],["fluid"]],"position":"middle","customTargeting":{"strnativekey":"UhpLuUjohuTPZ7eAodkse53o"}},"mobileFlexBottom":{"sizes":[[320,50],[300,250],[11,11],["fluid"]],"position":"bottom","customTargeting":{"strnativekey":"UhpLuUjohuTPZ7eAodkse53o"}},"mobileFlexBottom2":{"sizes":[[320,50],[300,250],[11,11],["fluid"]],"position":"bottom2","customTargeting":{"strnativekey":"UhpLuUjohuTPZ7eAodkse53o"}},"mobileFlexInc":{"sizes":[[320,50],[300,250],[11,11],["fluid"]],"position":"inc","disableInitialLoad":true,"customTargeting":{"strnativekey":"UhpLuUjohuTPZ7eAodkse53o"}},"mpuBottom":{"sizes":[[300,250]],"position":"bottom"},"mobileMpuBottom2":{"sizes":[[300,250]],"position":"bottom2"},"mpuMiddle":{"sizes":[[300,50]],"position":"middle"},"mpuTop":{"sizes":[[320,50]],"position":"top"},"mobileMpuTop":{"sizes":[[300,250]],"position":"top"},"mobileMpuMiddle":{"sizes":[[300,250]],"position":"middle"},"mobileMarketingMpuTop":{"sizes":[[320,100]],"position":"top"},"mobileMarketingMpuMiddle":{"sizes":[[320,100]],"position":"middle"},"mobileMarketingMpuBottom":{"sizes":[[320,100]],"position":"bottom"},"mobileNativeTop2":{"sizes":[[11,11],["fluid"]],"position":"top","customTargeting":{"strnativekey":"nJQjFMCYfivejGXoqNXYEKsY"},"eventCallbacks":{"slotRenderEnded":"nativeAdContainerClear"}},"mobileNativeTeamTop":{"sizes":[[11,11],["fluid"],[300,250]],"position":"top","customTargeting":{"strnativekey":"pjJXawoyvqmBkden6uzUT6kQ"},"eventCallbacks":{"slotRenderEnded":"nativeAdContainerClear"}},"mobileNativeGtTop":{"sizes":[[11,11],["fluid"],[300,250]],"position":"top","customTargeting":{"strnativekey":"83b0ae49"},"eventCallbacks":{"slotRenderEnded":"nativeAdContainerClear"}},"mobileNativeBottom2":{"sizes":[[11,11],["fluid"]],"position":"bottom","customTargeting":{"strnativekey":"nJQjFMCYfivejGXoqNXYEKsY"},"eventCallbacks":{"slotRenderEnded":"nativeAdContainerClear"}},"sharethroughPos2":{"sizes":[[11,11],["fluid"],[300,250]],"position":"top","customTargeting":{"strnativekey":"54ab0589"},"eventCallbacks":{"slotRenderEnded":"nativeAdContainerClear"}},"mMarqueeTop":{"sizes":[[356,365]],"position":"top"},"mobileNflnetworkTop":{"sizes":[[300,100]],"position":"top"},"mobileNflnetworkMarqueeTop":{"sizes":[[300,100]],"position":"top"},"mobileMpuTopGametracker":{"sizes":[[300,250]],"position":"top","disableInitialLoad":true,"eventCallbacks":{"slotRenderEnded":"clear20second"}},"mobileHqSponsoredShelf":{"sizes":[[150,25]],"position":"top"}}},"tablet":{"adUnits":{"resourceCenterTop":{"sizes":[[300,300]],"position":"top"},"resourceCenterBottom":{"sizes":[[632,160]],"position":"bottom"},"mpuPlusTop":{"sizes":[[300,600],[300,250]]},"marqueeTop":{"sizes":[[234,60]],"position":"top"},"mpuTop":{"sizes":[[300,250],[300,600]],"position":"top"},"mpuBottom":{"sizes":[[300,250]],"position":"bottom"},"leaderTop":{"sizes":[[728,90],[970,66]],"position":"bottom"},"leaderPlusTop":{"sizes":[[728,90],[970,66],[970,250]],"position":"top"}}},"siteName":"cbssports","collapseEmptyDiv":true,"setRefreshUnfilledSlots":false,"setClearUnfilledSlots":true,"disableInitialLoad":false,"disableInitialLoadCompanions":true,"enableSingleRequest":true,"enableAsyncRendering":true,"defaultRegion":"aw","adOrder":["skybox_top","leader_plus_top","leader_top","m_leader_top","mpu_plus_top","mpu_top","mpu_top_gametracker","m_marquee_top","m_rail_top_left","m_rail_top_right","sharethrough_top","sharethrough_bottom","native_arena","native_arena_middle","native_gt_top","native_arena_silent","leader_middle","m_leader_middle","mpu_middle","m_story_inset","m_dropdown","leader_plus2_bottom","leader_bottom","mpu_bottom","m_rail_bottom_left","native_story_flex_top","native_story_flex_middle","native_story_flex_bottom","native_story_flex_bottom2","video_live_event_sponsor","hq_sponsored_shelf","native_hq_top"],"disableInitialLoadRefresh":true,"enableHeaderBidding":true,"disableClearTargetingOnInit":true,"enableRepeatedAds":true,"disableAdIncrement":false},"containerId":"40268a2e0bef1","slotVars":{"network":"8264","siteName":"cbssports","collapseEmptyDiv":"1","topics":"collegefootball\/media\/home","platform":"desktop"},"adType":"gpt","adDivIds":["mpu-home-arena-flex-40268a2e0bef1","mpu-middle-40268a2e0bef1","leader-bottom-40268a2e0bef1","intromercial-40268a2e0bef1","skybox-top-40268a2e0bef1","leader-plus-top-40268a2e0bef1"]},"cookieName":"cbssports_ad","cookieServicePath":"\/ad\/ad-cookie\/","session":6,"subSession":4,"useFirstPageTargeting":true}
+        },
+        assetsVersion: {
+            version: 'fly-121'
+        },
+        device: "desktop",
+        environment: 'prod',
+        locale: 'en',
+        tracking: {
+            enabled: true
+        },
+        user: {
+            baseUrl: "https://www.cbssports.com",
+            'urls': {
+                                                                                                                                                                                                }
+        },
+        liveConnection: {
+            enabled: true
+        },
+        taboolaTag: {
+            enabled: true
+        }
+    };
+  </script>
+  <script id="script_moatyield_placeholder" type="application/javascript">
+   (function() {
+                var insert = function() {
+                            window.GdprFunctions.append_element('script', arguments[0], {"id":"script_moatyield","src":"https:\/\/z.moatads.com\/cbsprebidheader506831276743\/yi.js","async":true} );
+                    };
+
+                var currentScript = window.document.currentScript || window.document.getElementById("script_moatyield_placeholder") || window.document.body;
+        window.GdprFunctions.gdpr_consent_callback("script_moatyield", insert, [currentScript]);
+    })();
+  </script>
+  <script type="text/javascript">
+   setMoatPrebidData = function(adSlot) {
+        // Optional. Enables debugging.
+        if (window.moatPrebidApi && typeof window.moatPrebidApi.enableLogging === 'function') {
+            window.moatPrebidApi.enableLogging();
+        }
+        if (window.moatPrebidApi && typeof window.moatPrebidApi.slotDataAvailable === 'function' && window.moatPrebidApi.slotDataAvailable()) {
+            if(typeof adSlot != "undefined") {
+                // console.log("MYI:  Slot level data added to one slot!");
+                return window.moatPrebidApi.setMoatTargetingForSlot(adSlot);
+            } else {
+                // Sets available targeting data on all existing GPT slot objects.
+                // console.log("MYI: slot level data added to all slots!");
+                return window.moatPrebidApi.setMoatTargetingForAllSlots();
+            }
+        } else {
+            // Moat tag hasn't fully rendered yet, or slot data is not available for this URL.
+            // console.log("MYI: slot level data not available.");
+            return false;
+        }
+    }
+
+    function moatYieldReady() {
+        // This is a callback that will be made by Moat.
+        setMoatPrebidData();
+    }
+
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+
+    googletag.cmd.push(function() {
+        setMoatPrebidData();
+    });
+  </script>
+  <script type="text/javascript">
+   var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    googletag.cmd.push(function() {
+        var li_pcg=(/;?_li_pcgpv=y/.test(document.cookie)?"y":"n");
+        googletag.pubads().setTargeting("li_pcg",li_pcg);
+    });
+  </script>
+  <script id="script_gpt_placeholder" type="application/javascript">
+   (function() {
+                var insert = function() {
+                            window.GdprFunctions.append_element('script', arguments[0], {"id":"script_gpt","src":"https:\/\/www.googletagservices.com\/tag\/js\/gpt.js","async":true} );
+                    };
+
+                var currentScript = window.document.currentScript || window.document.getElementById("script_gpt_placeholder") || window.document.body;
+        window.GdprFunctions.gdpr_consent_callback("script_gpt", insert, [currentScript]);
+    })();
+  </script>
+  <script src="https://sportsfly.cbsistatic.com/fly-121/bundles/sportsmediajs/js-build/fly/libs/guid-1.0.js">
+  </script>
+  <script type="text/javascript">
+   var __tealium_data_guid = null;
+            if (typeof window.uuid.v1 === 'function'){
+                __tealium_data_guid = window.uuid.v1();
+            }
+
+            var _utag_obj = {"isEnabled":true,"deviceType":"desktop","isDev":"0","pageType":"home-arena","siteHier":["media","collegefootball","home"],"siteSection":["media","collegefootball","","","home",""],"siteType":"desktop web","topicId":[],"userState":"not authenticated","userType":"anon","dwAccount":"cbsicbssportssite","dwHost":"dw.cbsi.com","siteId":175,"reportSuiteId":"cbsicbssportssite","bkSiteId":3344,"limit":4,"pageName":"\/college-football\/","pageTypeId":"2001","pageOntologyId":"22166","siteName":"cbssports","tealium":{"profile":"cbssportssite","env":"prod"},"brandPlatformId":"cbssports_site_desktop"};
+            _utag_obj.pageViewGuid=__tealium_data_guid;
+            var utag_data = _utag_obj;
+  </script>
+  <script>
+   var skyBoxScroll = function() {
+        if (SportsPageVars.device == "mobile" || (SportsPageVars.device == "desktop" && $(window).scrollTop() != 0)) {
+            window.scrollTo(window.pageXOffset, window.pageYOffset - 1);
+            window.scrollTo(window.pageXOffset, window.pageYOffset + 1);
+        }
+    }
+  </script>
+  <script id="script_indexexchange_placeholder" type="application/javascript">
+   (function() {
+                var insert = function() {
+                            window.GdprFunctions.append_element('script', arguments[0], {"id":"script_indexexchange","src":"https:\/\/js-sec.indexww.com\/ht\/ls-cbssports.js","async":true} );
+                    };
+
+                var currentScript = window.document.currentScript || window.document.getElementById("script_indexexchange_placeholder") || window.document.body;
+        window.GdprFunctions.gdpr_consent_callback("script_indexexchange", insert, [currentScript]);
+    })();
+  </script>
+  <script id="script_sonobi_placeholder" type="application/javascript">
+   (function() {
+                var insert = function() {
+                            window.GdprFunctions.append_element('script', arguments[0], {"id":"script_sonobi","src":"https:\/\/mtrx.go.sonobi.com\/morpheus.cbssports.4073.js","async":true} );
+                    };
+
+                var currentScript = window.document.currentScript || window.document.getElementById("script_sonobi_placeholder") || window.document.body;
+        window.GdprFunctions.gdpr_consent_callback("script_sonobi", insert, [currentScript]);
+    })();
+  </script>
+  <script type="text/javascript">
+   !function(n,t,c,e,u){function r(n){try{f=n(u)}catch(n){return h=n,void i(p,n)}i(s,f)}function i(n,t){for(var c=0;c<n.length;c++)d(n[c],t);
+}function o(n,t){return n&&(f?d(n,f):s.push(n)),t&&(h?d(t,h):p.push(t)),l}function a(n){return o(!1,n)}function d(t,c){
+n.setTimeout(function(){t(c)},0)}var f,h,s=[],p=[],l={then:o,catch:a,_setup:r};n[e]=l;var v=t.createElement("script");
+v.src=c,v.async=!0,v.id="_uasdk",v.rel=e,t.head.appendChild(v)}(window,document,'https://web-sdk.urbanairship.com/notify/v1/ua-sdk.min.js',
+  'UA', {
+    appKey: 'nc2vzUKITAyG3E4PK9yQ_Q',
+    token: 'MTpuYzJ2elVLSVRBeUczRTRQSzl5UV9ROkZPUnR1MVJkTUhYTExQQjAwT09yZzBYNE8yNGtLcFNDbFRxbjhvS01ISW8',
+    vapidPublicKey: 'BC-RGbqv3uep1fUhhSMMctITmleQkFudVf2vBx4oMylN5GfhzWCdeKfLZoXFNAf0QjnReX6Qpjj4qahS53w6LaQ=',
+
+    // This  has a default of `/push-worker.js`. It should live at the root of
+    // your domain. It only needs to be specified if your worker lives at a
+    // different path. (NOTE: It doesn't actually work at the root level)
+    workerUrl: '/service-workers/ua-push-worker.prod.js'
+  });
+  </script>
+  <script id="script_minutely_placeholder" type="application/javascript">
+   (function() {
+                var insert = function() {
+                            window.GdprFunctions.append_element('script', arguments[0], {"async":true,"defer":true,"tag":"minute","id":"script_minutely","src":"https:\/\/apv-launcher.minute.ly\/api\/v3\/launcher\/MIN-80200.js"} );
+                    };
+
+                var currentScript = window.document.currentScript || window.document.getElementById("script_minutely_placeholder") || window.document.body;
+        window.GdprFunctions.gdpr_consent_callback("script_minutely", insert, [currentScript]);
+    })();
+  </script>
+ </head>
+ <body class="">
+  <div id="cbs-site-data" style="display: none">
+   site: media | arena: collegefootball | pageType: home-arena | 
+    section:  | slug: college-football | sport: collegefootball | route: topic_landing | 
+    6-keys: media/spln/collegefootball/reg/free/home
+  </div>
+  <div class="ad-intromercial" data-ad="intromercial" id="intromercial-40268a2e0bef1">
+   <script>
+    window.console && console.log && console.log("ADS: queuing intromercial-40268a2e0bef1 for display");
+        var cbsiGptDivIds = cbsiGptDivIds || [];
+        cbsiGptDivIds.push("intromercial-40268a2e0bef1");
+   </script>
+  </div>
+  <div class="page-shell single-block-layout arena-page">
+   <link href="https://sportsfly.cbsistatic.com/fly-121/bundles/sportsmediacss/css/header-footer/header-footer.desktop.css" rel="stylesheet"/>
+   <div class="skybox-top-wrapper" id="skybox-top-wrapper">
+    <div class="ad-skybox-top" data-ad="skybox-top" id="skybox-top-40268a2e0bef1">
+     <script>
+      window.console && console.log && console.log("ADS: queuing skybox-top-40268a2e0bef1 for display");
+        var cbsiGptDivIds = cbsiGptDivIds || [];
+        cbsiGptDivIds.push("skybox-top-40268a2e0bef1");
+     </script>
+    </div>
+   </div>
+   <header class="cbs-site-header" data-component="siteHeader" data-site-header-options='{"currentSportOmnitureName":"CollegeFootball"}' id="cbs-site-header">
+    <div class="nav-network-bar" id="cbs-network-bar">
+     <ul class="nav-networks">
+      <li class="nav-networks-item is-selected">
+       <a href="https://www.cbssports.com">
+        CBSSports.com
+       </a>
+      </li>
+      <li class="nav-networks-item">
+       <a href="http://247sports.com/" target="_blank">
+        247Sports
+       </a>
+      </li>
+      <li class="nav-networks-item">
+       <a href="http://www.maxpreps.com" target="_blank">
+        MaxPreps
+       </a>
+      </li>
+      <li class="nav-networks-item">
+       <a href="http://www.scout.com/" target="_blank">
+        Scout
+       </a>
+      </li>
+      <li class="nav-networks-item">
+       <a href="http://www.sportsline.com" target="_blank">
+        SportsLine
+       </a>
+      </li>
+      <li class="nav-networks-item">
+       <a href="http://shop.cbssports.com/?utm_source=cbssportscom_hp&amp;utm_medium=bm_referral&amp;utm_term=kw--CBS_Sports" target="_blank">
+        Shop
+       </a>
+      </li>
+      <li class="nav-networks-item">
+       <a href="https://supremegolf.com/" target="_blank">
+        Play Golf
+       </a>
+      </li>
+      <li class="nav-networks-item">
+       <a class="stubhub-tracker" data-stubhub-element="CBSSports Brand Nav" href="https://www.stubhub.com/?gcid=chAFF-_-geoUS-_-genAllTix-_-dt170502-_-cmpHpdropdown-_-partCBSSports" rel="nofollow" target="_blank">
+        Stubhub
+       </a>
+      </li>
+     </ul>
+     <div class="SocialNavBar">
+      <ul class="SocialIconsBar">
+       <li>
+        <a aria-label="Facebook" class="SocialButton SocialButton--rounded SocialButton-- icon-moon-facebook" href="https://www.facebook.com/cbssports/" rel="nofollow" target="_blank" title="Facebook">
+        </a>
+       </li>
+       <li>
+        <a aria-label="Twitter" class="SocialButton SocialButton--rounded SocialButton-- icon-moon-twitter" href="https://twitter.com/cbssports/" rel="nofollow" target="_blank" title="Twitter">
+        </a>
+       </li>
+       <li>
+        <a aria-label="Instagram" class="SocialButton SocialButton--rounded SocialButton-- icon-moon-instagram" href="https://instagram.com/cbssports/" rel="nofollow" target="_blank" title="Instagram">
+        </a>
+       </li>
+       <li>
+        <a aria-label="Flipboard" class="SocialButton SocialButton--rounded SocialButton-- icon-moon-flipboard" href="https://flipboard.com/@cbssports/?utm_source=cbssports&amp;utm_medium=follow&amp;utm_campaign=tools" rel="nofollow" target="_blank" title="Flipboard">
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div class="cbs-site-nav" id="cbs-site-nav">
+     <div class="site-nav-inner">
+      <div class="site-nav-logo">
+       <div class="cbs-logo-lockup">
+        <div class="cbs-logo">
+         <a href="/">
+          <span class="cbs-logo-icon icon-moon-cbs-icon">
+          </span>
+         </a>
+        </div>
+        <div class="cbs-logo-section has-icon" id="cbs-logo-section">
+         <div class="cbs-logo-pos">
+          <span class="logo-sport icon-moon-arena-text-ncaafb">
+          </span>
+          <span class="logo-icon icon-moon-caret-down">
+          </span>
+         </div>
+         <div class="cbs-logo-dropdown">
+          <ul class="nav-dropdown-col">
+           <li class="nav-dropdown-item">
+            <span class="icon-sport icon-moon-cbs-icon">
+            </span>
+            <a href="https://www.cbssports.com">
+             CBS Sports Home
+            </a>
+           </li>
+           <li class="nav-dropdown-item">
+            <span class="icon-sport icon-moon-play-monitor">
+            </span>
+            <a class="" href="/live/?ftag=SHQ-16-10aaa0a">
+             Sports HQ
+            </a>
+           </li>
+           <li class="nav-dropdown-item">
+            <span class="icon-sport icon-moon-arena-bracket">
+            </span>
+            <a class="" href="/college-basketball/ncaa-tournament/brackets/games/">
+             Brackets
+            </a>
+           </li>
+           <li class="nav-dropdown-item">
+            <span class="icon-sport icon-moon-arena-fantasy">
+            </span>
+            <a class="" href="/fantasy/">
+             Fantasy
+            </a>
+           </li>
+           <li class="nav-dropdown-item">
+            <span class="icon-sport icon-moon-arena-nfl">
+            </span>
+            <a class="" href="/nfl/">
+             NFL
+            </a>
+           </li>
+           <li class="nav-dropdown-item">
+            <span class="icon-sport icon-moon-arena-basketball">
+            </span>
+            <a class="" href="/college-basketball/">
+             NCAA BB
+            </a>
+           </li>
+           <li class="nav-dropdown-item">
+            <span class="icon-sport icon-moon-arena-basketball">
+            </span>
+            <a class="" href="/nba/">
+             NBA
+            </a>
+           </li>
+           <li class="nav-dropdown-item">
+            <span class="icon-sport icon-moon-arena-mlb">
+            </span>
+            <a class="" href="/mlb/">
+             MLB
+            </a>
+           </li>
+          </ul>
+          <ul class="nav-dropdown-col">
+           <li class="nav-dropdown-item">
+            <a class="" href="/golf/">
+             Golf
+            </a>
+           </li>
+           <li class="nav-dropdown-item is-selected">
+            <a class="" href="/college-football/">
+             NCAA FB
+            </a>
+           </li>
+           <li class="nav-dropdown-item">
+            <a class="" href="/nhl/">
+             NHL
+            </a>
+           </li>
+           <li class="nav-dropdown-item">
+            <a class="" href="/mma">
+             MMA
+            </a>
+           </li>
+           <li class="nav-dropdown-item">
+            <a class="" href="/wwe/">
+             WWE
+            </a>
+           </li>
+           <li class="nav-dropdown-item">
+            <a class="" href="/boxing/">
+             Boxing
+            </a>
+           </li>
+           <li class="nav-dropdown-item">
+            <a class="" href="/soccer/">
+             Soccer
+            </a>
+           </li>
+           <li class="nav-dropdown-item">
+            <a class="" href="/aaf/">
+             AAF
+            </a>
+           </li>
+          </ul>
+          <ul class="nav-dropdown-col">
+           <li class="nav-dropdown-item">
+            <a class="" href="/nascar/">
+             NASCAR
+            </a>
+           </li>
+           <li class="nav-dropdown-item">
+            <a class="" href="/tennis/">
+             Tennis
+            </a>
+           </li>
+           <li class="nav-dropdown-item">
+            <a class="" href="/crossfit/">
+             CrossFit
+            </a>
+           </li>
+           <li class="nav-dropdown-item">
+            <a class="" href="/olympics/">
+             Olympics
+            </a>
+           </li>
+           <li class="nav-dropdown-item">
+            <a class="external-link" href="https://www.americasbestracing.net/" rel="nofollow" target="_blank">
+             Horse Racing
+            </a>
+           </li>
+           <li class="nav-dropdown-item">
+            <a class="" href="http://shop.cbssports.com/">
+             Shop
+            </a>
+           </li>
+           <li class="nav-dropdown-item">
+            <a class="external-link" href="http://www.pbr.com/" rel="nofollow" target="_blank">
+             PBR
+            </a>
+           </li>
+           <li class="nav-dropdown-item">
+            <a class="external-link" href="https://www.usmlr.com/" rel="nofollow" target="_blank">
+             Major League Rugby
+            </a>
+           </li>
+          </ul>
+          <ul class="nav-dropdown-col">
+           <li class="nav-dropdown-item">
+            <a class="external-link" href="http://www.prorodeotv.com/?ftag=CSL-01-10aaa8h" rel="nofollow" target="_blank">
+             PRCA
+            </a>
+           </li>
+           <li class="nav-dropdown-item">
+            <a class="stubhub-tracker" data-stubhub-element="CBSSports Global Nav" href="https://www.stubhub.com/?gcid=chAFF-_-geoUS-_-genAllTix-_-dt170502-_-cmpHpdropdown-_-partCBSSports" rel="nofollow" target="_blank">
+             Stubhub
+            </a>
+           </li>
+           <li class="nav-dropdown-item">
+            <a class="external-link" href="https://supremegolf.com/?utm_source=cbs_golf&amp;utm_medium=drop_down&amp;utm_campaign=website&amp;utm_content=play_golf" rel="nofollow" target="_blank">
+             Play Golf
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+      <nav class="site-nav-list">
+       <ul>
+        <li class="nav-list-item is-selected nav-item-overflow">
+         <a class="" href="/college-football/">
+          Home
+         </a>
+        </li>
+        <li class="nav-list-item nav-item-overflow">
+         <a class="" href="/college-football/scoreboard/">
+          Scores
+         </a>
+        </li>
+        <li class="nav-list-item nav-item-overflow">
+         <a class="" href="/college-football/schedule/">
+          Schedule
+         </a>
+        </li>
+        <li class="nav-list-item nav-item-overflow">
+         <a class="" href="/college-football/standings/">
+          Standings
+         </a>
+        </li>
+        <li class="nav-list-item nav-item-overflow">
+         <a class="" href="/college-football/rankings/">
+          Rankings
+         </a>
+        </li>
+        <li class="nav-list-item nav-item-overflow">
+         <a class="" href="/collegefootball/stats/">
+          Stats
+         </a>
+        </li>
+        <li class="nav-list-item nav-item-overflow">
+         <a class="" href="/college-football/sec-live/?ftag=SPM-01-10acg4c">
+          SEC Live
+         </a>
+        </li>
+        <li class="nav-list-item nav-item-overflow">
+         <a class="" href="/collegefootball/teams">
+          Teams
+         </a>
+        </li>
+        <li class="nav-list-item nav-item-overflow">
+         <a class="" href="/collegefootball/players">
+          Players
+         </a>
+        </li>
+        <li class="nav-list-item nav-item-overflow">
+         <a class="" href="/college-football/signing-day-central/">
+          Signing Day
+         </a>
+        </li>
+        <li class="nav-list-item nav-item-overflow">
+         <a class="" href="/college-football/news/2018-19-college-football-bowl-schedule-games-dates-times-tv-channels/">
+          Bowl Schedule
+         </a>
+        </li>
+        <li class="nav-list-item nav-item-overflow">
+         <a class="" href="https://247sports.com/Season/2019-Football/CompositeRecruitRankings?InstitutionGroup=HighSchool" target="_blank">
+          2019 Top Recruits
+         </a>
+        </li>
+        <li class="nav-list-item nav-item-overflow">
+         <a class="" href="https://247sports.com/Season/2019-Football/CompositeTeamRankings/" target="_blank">
+          2019 Top Classes
+         </a>
+        </li>
+        <li class="nav-list-item nav-item-overflow">
+         <a class="" href="/podcasts/247sports-college-football/">
+          Cover 3 Podcast
+         </a>
+        </li>
+        <li class="nav-list-item nav-item-overflow">
+         <a class="" href="http://shop.cbssports.com/CBS_COLLEGE">
+          College Shop
+         </a>
+        </li>
+        <li class="nav-list-item nav-item-overflow">
+         <a class="stubhub-tracker" data-stubhub-element="CBSSports Arena Nav" href="https://www.stubhub.com/ncaa-football-tickets/grouping/122/?gcid=chAFF-_-geoUS-_-genAllTix-_-dt170502-_-cmpHpdropdown-_-partCBSSports" rel="nofollow" target="_blank">
+          Stubhub
+         </a>
+        </li>
+        <li class="nav-list-item has-dropdown the-dots total-items-16">
+         <span class="icon-more icon-moon-nav-more">
+         </span>
+         <ul class="site-nav-dropdown is-the-dots is-wide">
+          <li class="nav-dropdown-item nav-dropdown-overflow">
+           <a class="" href="/college-football/">
+            Home
+           </a>
+          </li>
+          <li class="nav-dropdown-item nav-dropdown-overflow">
+           <a class="" href="/college-football/scoreboard/">
+            Scores
+           </a>
+          </li>
+          <li class="nav-dropdown-item nav-dropdown-overflow">
+           <a class="" href="/college-football/schedule/">
+            Schedule
+           </a>
+          </li>
+          <li class="nav-dropdown-item nav-dropdown-overflow">
+           <a class="" href="/college-football/standings/">
+            Standings
+           </a>
+          </li>
+          <li class="nav-dropdown-item nav-dropdown-overflow">
+           <a class="" href="/college-football/rankings/">
+            Rankings
+           </a>
+          </li>
+          <li class="nav-dropdown-item nav-dropdown-overflow">
+           <a class="" href="/collegefootball/stats/">
+            Stats
+           </a>
+          </li>
+          <li class="nav-dropdown-item nav-dropdown-overflow">
+           <a class="" href="/college-football/sec-live/?ftag=SPM-01-10acg4c">
+            SEC Live
+           </a>
+          </li>
+          <li class="nav-dropdown-item nav-dropdown-overflow">
+           <a class="" href="/collegefootball/teams">
+            Teams
+           </a>
+          </li>
+          <li class="nav-dropdown-item nav-dropdown-overflow">
+           <a class="" href="/collegefootball/players">
+            Players
+           </a>
+          </li>
+          <li class="nav-dropdown-item nav-dropdown-overflow">
+           <a class="" href="/college-football/signing-day-central/">
+            Signing Day
+           </a>
+          </li>
+          <li class="nav-dropdown-item nav-dropdown-overflow">
+           <a class="" href="/college-football/news/2018-19-college-football-bowl-schedule-games-dates-times-tv-channels/">
+            Bowl Schedule
+           </a>
+          </li>
+          <li class="nav-dropdown-item nav-dropdown-overflow">
+           <a class="external-link" href="https://247sports.com/Season/2019-Football/CompositeRecruitRankings?InstitutionGroup=HighSchool" target="_blank">
+            2019 Top Recruits
+           </a>
+          </li>
+          <li class="nav-dropdown-item nav-dropdown-overflow">
+           <a class="external-link" href="https://247sports.com/Season/2019-Football/CompositeTeamRankings/" target="_blank">
+            2019 Top Classes
+           </a>
+          </li>
+          <li class="nav-dropdown-item nav-dropdown-overflow">
+           <a class="" href="/podcasts/247sports-college-football/">
+            Cover 3 Podcast
+           </a>
+          </li>
+          <li class="nav-dropdown-item nav-dropdown-overflow">
+           <a class="" href="http://shop.cbssports.com/CBS_COLLEGE">
+            College Shop
+           </a>
+          </li>
+          <li class="nav-dropdown-item nav-dropdown-overflow">
+           <a class="stubhub-tracker" data-stubhub-element="CBSSports Arena Nav" href="https://www.stubhub.com/ncaa-football-tickets/grouping/122/?gcid=chAFF-_-geoUS-_-genAllTix-_-dt170502-_-cmpHpdropdown-_-partCBSSports" rel="nofollow" target="_blank">
+            Stubhub
+           </a>
+          </li>
+         </ul>
+        </li>
+       </ul>
+      </nav>
+      <div class="site-nav-side">
+       <ul class="site-nav-side-inner">
+        <li class="nav-side-item games-item has-dropdown">
+         <span class="narrow-text">
+          Play
+         </span>
+         <span class="narrow-icon icon-item icon-moon-nav-games">
+         </span>
+         <div class="site-nav-dropdown is-dropdown-games align-right">
+          <div class="nav-dropdown-inner">
+           <div class="nav-dropdown-game">
+            <h6 class="nav-dropdown-title">
+             <a class="" href="/fantasy/games/?ftag=SPM-16-10acb5f">
+              Games
+             </a>
+            </h6>
+            <div class="nav-game-wrap">
+             <div class="nav-game game-left">
+              <div class="nav-game-image">
+               <a href="https://www.cbssports.com/college-basketball/ncaa-tournament/brackets/games/?ftag=CBS-16-10aad0j">
+                <figure class="img">
+                 <img alt="180x1002x.jpg" class="is-lazy-image" data-lazy="https://sportshub.cbsistatic.com/i/r/2019/03/05/dcfda14f-2c9e-421b-8af9-5682c9794893/thumbnail/180x100/7e0412bf020fe16106fc01a206829ade/180x1002x.jpg" height="100" src="" width="180"/>
+                </figure>
+                <p class="nav-game-text">
+                 Play Now
+                </p>
+               </a>
+              </div>
+              <p class="nav-game-title">
+               <a class="" href="/college-basketball/ncaa-tournament/brackets/games/?ftag=CBS-16-10aad0j">
+                BRACKET GAMES
+               </a>
+              </p>
+             </div>
+             <div class="nav-game game-right">
+              <div class="nav-game-image">
+               <a href="http:/www.cbssports.com/fantasy/games/baseball/?ftag=CBS-16-10aab7e">
+                <figure class="img">
+                 <img alt="180x100.png" class="is-lazy-image" data-lazy="https://sportshub.cbsistatic.com/i/r/2019/01/24/39410a7b-5cb5-4061-b075-351b398b9524/thumbnail/180x100/93e7d0b54aae6b3265123bcd530a94aa/180x100.png" height="100" src="" width="180"/>
+                </figure>
+                <p class="nav-game-text">
+                 Play Now
+                </p>
+               </a>
+              </div>
+              <p class="nav-game-title">
+               <a class="" href="http:/www.cbssports.com/fantasy/games/baseball/?ftag=CBS-16-10aab7e">
+                FANTASY BASEBALL
+               </a>
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="nav-dropdown-game">
+            <div class="nav-game-dropdown-text">
+             <a class="" href="/fantasy/games/my-teams/">
+              View your Leagues
+             </a>
+            </div>
+           </div>
+           <div class="nav-dropdown-game">
+            <h6 class="nav-dropdown-title">
+             <a class="" href="/fantasy/games/baseball/?ttag=FBB16_os_drpdwn_lk">
+              Fantasy Baseball
+             </a>
+            </h6>
+           </div>
+           <div class="nav-dropdown-game">
+            <h6 class="nav-dropdown-title">
+             <a class="" href="/fantasy/games/football?ttag=FF16_os_drpdwn_lk">
+              Fantasy Football
+             </a>
+            </h6>
+           </div>
+           <div class="nav-dropdown-game">
+            <h6 class="nav-dropdown-title">
+             <a class="" href="/fantasy/games/basketball/?ttag=FBK16_os_drpdwn_lk">
+              Fantasy Basketball
+             </a>
+            </h6>
+           </div>
+           <div class="nav-dropdown-game">
+            <h6 class="nav-dropdown-title">
+             <a class="" href="/fantasy/games/hockey/?ttag=FHK16_os_drpdwn_lk">
+              Fantasy Hockey
+             </a>
+            </h6>
+           </div>
+          </div>
+          <div class="nav-dropdown-bottom">
+           <div class="nav-dropdown-button">
+            <a class="" href="/fantasy/games/">
+             See All Sports Games
+            </a>
+           </div>
+          </div>
+         </div>
+        </li>
+        <li class="nav-side-item watch-item has-dropdown">
+         <span class="narrow-text">
+          Watch
+         </span>
+         <span class="narrow-icon icon-item icon-moon-nav-watch">
+         </span>
+         <div class="site-nav-dropdown align-right">
+          <div class="nav-dropdown-inner">
+           <h6 class="nav-dropdown-title">
+            <a class="" href="/live/?ftag=SHQ-16-10aaa2j">
+             24/7 SPORTS NEWS NETWORK
+            </a>
+           </h6>
+           <div class="nav-dropdown-top">
+            <a class="" href="https://www.cbssports.com/live/?ftag=SHQ-16-10aaa2j">
+             <div class="image-icon-overlay-wrap">
+              <figure class="img">
+               <img alt="sportshq-watch.png" class="is-lazy-image" data-lazy="https://sportshub.cbsistatic.com/i/r/2018/07/25/72f4a338-7f3b-4d55-a838-c201904967f6/thumbnail/270x152/a760cf144d1539f2d3ca928e4e10fba8/sportshq-watch.png" height="152" src="" width="270"/>
+              </figure>
+              <div class="image-icon-overlay size-small type-video">
+              </div>
+             </div>
+            </a>
+           </div>
+           <ul>
+            <li class="nav-dropdown-item">
+             <a class="" href="/cbs-sports-network/">
+              Watch CBS Sports Network
+             </a>
+            </li>
+            <li class="nav-dropdown-item">
+             <a class="external-link" href="http://www.cbssportsnetwork.com/" rel="nofollow" target="_blank">
+              CBSSN Channel Finder
+             </a>
+            </li>
+            <li class="nav-dropdown-item">
+             <a class="" href="/live/?ftag=SHQ-16-10aaa2j">
+              Watch CBS Sports HQ
+             </a>
+            </li>
+            <li class="nav-dropdown-item">
+             <a class="" href="/cbssports">
+              TV Shows &amp; Listings
+             </a>
+            </li>
+            <li class="nav-dropdown-item">
+             <a class="" href="/college-basketball/cbk-live/?ftag=CBS-16-10aaa7i">
+              Watch College Basketball Live
+             </a>
+            </li>
+            <li class="nav-dropdown-item">
+             <a class="" href="http://www.collegesportslive.com/start/?ftag=CSL-01-10aaa6f">
+              SportsLive
+             </a>
+            </li>
+            <li class="nav-dropdown-item">
+             <a class="" href="/golf/video/skratch/">
+              Skratch Golf
+             </a>
+            </li>
+            <li class="nav-dropdown-item">
+             <a class="" href="/video/player/golf/?ftag=CBS-01-10aac2e">
+              WATCH PGA TOUR LIVE
+             </a>
+            </li>
+            <li class="nav-dropdown-item">
+             <a class="" href="/cbs-sports-network/?ftag=CBS-01-10aac8d">
+              WATCH AAF LIVE
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </li>
+        <li class="nav-side-item listen-item has-dropdown">
+         <span class="narrow-text">
+          Listen
+         </span>
+         <span class="narrow-icon icon-item icon-moon-nav-listen">
+         </span>
+         <div class="site-nav-dropdown align-right">
+          <div class="nav-dropdown-inner">
+           <h6 class="nav-dropdown-title">
+            CBS Sports Radio
+           </h6>
+           <div class="nav-dropdown-top">
+            <div class="nav-dropdown-image">
+             <a href="http://player.radio.com/listen/station/cbs-sports-radio" target="_blank">
+              <figure class="img">
+               <img alt="cbssports-radio.png" class="is-lazy-image" data-lazy="https://sportshub.cbsistatic.com/i/r/2016/02/24/fb0619ed-f59a-47ac-ac37-d7f670af79f3/thumbnail/100x100/97e3cd55c0d67234988d134e0d362eeb/cbssports-radio.png" height="100" src="" width="100"/>
+              </figure>
+             </a>
+            </div>
+            <div class="nav-dropdown-top-side">
+             <p class="nav-dropdown-top-title">
+              <a class="external-link" href="http://player.radio.com/listen/station/cbs-sports-radio" rel="nofollow" target="_blank">
+               Listen Live
+              </a>
+             </p>
+            </div>
+           </div>
+           <h6 class="nav-dropdown-title">
+            Fantasy Baseball Today
+           </h6>
+           <div class="nav-dropdown-top">
+            <div class="nav-dropdown-image">
+             <a href="http://traffic.megaphone.fm/CBS3138210244.mp3" target="_blank">
+              <figure class="img">
+               <img alt="podcast-fantasybaseball-logo.jpg" class="is-lazy-image" data-lazy="https://sportshub.cbsistatic.com/i/r/2017/06/20/f76ee637-ca3e-4882-b818-b977cf7b28f4/thumbnail/100x100/cc41047be6bb474871498efe05e5436e/podcast-fantasybaseball-logo.jpg" height="100" src="" width="100"/>
+              </figure>
+             </a>
+            </div>
+            <div class="nav-dropdown-top-side">
+             <p class="nav-dropdown-top-title">
+              <a class="external-link" href="http://traffic.megaphone.fm/CBS3138210244.mp3" rel="nofollow" target="_blank">
+               Busts
+              </a>
+             </p>
+             <time class="nav-dropdown-top-date">
+              13h ago
+             </time>
+            </div>
+           </div>
+           <ul>
+            <li class="nav-dropdown-item">
+             <a class="external-link" href="http://radio.cbssports.com/" target="_blank">
+              CBS Sports Radio
+             </a>
+            </li>
+            <li class="nav-dropdown-item">
+             <a class="" href="/podcasts/jonah-keri/">
+              The Jonah Keri Podcast
+             </a>
+            </li>
+            <li class="nav-dropdown-item">
+             <a class="" href="/podcast">
+              Podcasts
+             </a>
+            </li>
+            <li class="nav-dropdown-item">
+             <a class="external-link" href="http://jimrome.com/" rel="nofollow" target="_blank">
+              The Jim Rome Show
+             </a>
+            </li>
+            <li class="nav-dropdown-item">
+             <a class="" href="">
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </li>
+        <li class="nav-side-item log-in-item">
+         <a href="/user/login/">
+          <span class="the-button">
+           Log In
+          </span>
+         </a>
+        </li>
+        <li class="nav-side-item user-item has-dropdown">
+         <span class="the-button">
+          <span class="icon-item-button icon-moon-nav-avatar">
+          </span>
+          <span class="icon-item-text">
+           My Teams
+          </span>
+         </span>
+         <div class="site-nav-dropdown is-dropdown-user align-right">
+          <div id="nav-side-my-teams">
+           <div class="loader">
+            <div class="bar">
+            </div>
+            <div class="bar">
+            </div>
+            <div class="bar">
+            </div>
+           </div>
+          </div>
+          <div class="my-teams-component-bottom">
+           <div class="bottom-row">
+            <a href="/fantasy/games/my-teams/">
+             Organize / See All Teams
+            </a>
+            <a href="http://cbsi.force.com/CBSi/cbssports">
+             Help
+            </a>
+           </div>
+           <div class="bottom-row">
+            <a href="https://www.cbssports.com/settings">
+             Account Settings
+            </a>
+            <a href="/user/logout/">
+             Log Out
+            </a>
+           </div>
+          </div>
+         </div>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </header>
+   <link href="https://sportsfly.cbsistatic.com/fly-121/bundles/sportsmediacss/css/header-footer/saag/saag.desktop.css" rel="stylesheet"/>
+   <div class="page-marquee-container">
+   </div>
+   <div class="mantle-skin" data-component="headerSticky" id="mantle_skin">
+    <div class="leaderboard-wrap" data-component="adsLeaderboardCollapse" id="leader-top-wrap">
+     <div class="ad-leader-plus-top" data-ad="leader-plus-top" id="leader-plus-top-40268a2e0bef1">
+      <script>
+       window.console && console.log && console.log("ADS: queuing leader-plus-top-40268a2e0bef1 for display");
+        var cbsiGptDivIds = cbsiGptDivIds || [];
+        cbsiGptDivIds.push("leader-plus-top-40268a2e0bef1");
+      </script>
+     </div>
+    </div>
+    <main class="highlander-page-container" id="page-content">
+     <!--[if lt IE 10 ]>
+                            <div class="upgrade-modal hide-upgrade" data-component='ieUpgradeMessage' >
+                                <a class="icon-moon-close-x" id="close-upgrade-modal"></a>
+                                <div class="message">
+                                    <strong>You are using an unsupported version of Internet Explorer.</strong><br/><br/>
+                                    Your version of Internet Explorer is no longer supported by CBS Sports.<br/>
+                                    Some features may not work correctly.<br/>
+                                    Please upgrade to a modern browser:<br/><br/>
+                                    <a href="http://windows.microsoft.com/en-US/internet-explorer/download-ie">1. Internet Explorer 11</a><br/>
+                                    <a href="https://www.google.com/intl/en/chrome/browser/desktop/index.html">2. Google Chrome</a><br/>
+                                    <a href="https://www.mozilla.org/en-US/firefox/new/">3. Firefox</a>
+                                </div>
+                            </div>
+                        <![endif]-->
+     <div class="top-marquee-wrap">
+      <div class="top-marquee-main">
+       <div class="article-list-marquee-wrap covers-3">
+        <div class="article-list-marquee-col article-list-marquee-left">
+         <div class="article-list-marquee-item dek-slide-in">
+          <a aria-label="How the Sooners hope to revive their defense" class="" href="/college-football/news/how-a-young-coordinator-is-reviving-oklahomas-defense-through-focus-effort-and-candy-bars/" om-event="New Desktop Design|College Football|Cover Treatment - 3|Cover 1|Image">
+           <div class="image-icon-overlay-wrap has-title is-large">
+            <div class="background-image article-list-dynamic-image" style="background-image: url('        https://sportshub.cbsistatic.com/i/r/2019/01/04/230185ad-f7b5-4a01-b9ce-5915a796c42a/thumbnail/650x550/64a1a5d84a5e70fab8eca93ef9cb466e/grinch.jpg')">
+            </div>
+            <div class="image-icon-text-overlay">
+             <h1 class="image-icon-title">
+              How the Sooners hope to revive their defense
+             </h1>
+             <div class="image-icon-dek">
+              Alex Grinch looks to improve a defense that has held the Sooners back from national titles over the last few seasons.
+             </div>
+            </div>
+           </div>
+          </a>
+         </div>
+        </div>
+        <div class="article-list-marquee-col article-list-marquee-right">
+         <div class="article-list-marquee-right-row">
+          <div class="article-list-marquee-item dek-slide-in">
+           <a aria-label="Can UCF have a Gonzaga-like run?" class="" href="/college-football/news/why-ucf-is-the-college-football-program-with-potential-to-experience-gonzaga-like-success/" om-event="New Desktop Design|College Football|Cover Treatment - 3|Cover 2|Image">
+            <div class="image-icon-overlay-wrap has-title">
+             <div class="background-image article-list-dynamic-image" style="background-image: url('        https://sportshub.cbsistatic.com/i/r/2019/03/13/b125a5bf-c8a0-4166-b178-4eb1426e4754/thumbnail/600x250/e666e58b0cb03c1918d02cebcbb7686f/usatsi-11770438.jpg')">
+             </div>
+             <div class="image-icon-text-overlay">
+              <h2 class="image-icon-title">
+               Can UCF have a Gonzaga-like run?
+              </h2>
+              <div class="image-icon-dek">
+               Tom Fornelli ponders that and answer your questions in this week's college football mailbag.
+              </div>
+             </div>
+            </div>
+           </a>
+          </div>
+         </div>
+         <div class="article-list-marquee-right-row">
+          <div class="article-list-marquee-item dek-slide-in">
+           <a aria-label="Bryant feeling the love at Mizzou" class="" href="/college-football/news/failing-to-convince-himself-to-transfer-elsewhere-kelly-bryant-is-feeling-the-love-at-missouri/" om-event="New Desktop Design|College Football|Cover Treatment - 3|Cover 3|Image">
+            <div class="image-icon-overlay-wrap has-title">
+             <div class="background-image article-list-dynamic-image" style="background-image: url('        https://sportshub.cbsistatic.com/i/r/2019/03/11/3a020fdb-e998-402f-9c2d-9ebad8c94327/thumbnail/600x250/daf2f969b0205a6c0ab7818d83649cad/kelly-bryant-mizzou-graphic.jpg')">
+             </div>
+             <div class="image-icon-text-overlay">
+              <h2 class="image-icon-title">
+               Bryant feeling the love at Mizzou
+              </h2>
+              <div class="image-icon-dek">
+               Bryant looked for every reason not to go to Mizzou, but the draw of the Tigers was simply too much in the end.
+              </div>
+             </div>
+            </div>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="top-marquee-side">
+       <ul class="article-list-stack theme-dark">
+        <li class="article-list-stack-item">
+         <a href="/college-football/news/ex-kansas-coach-david-beaty-files-lawsuit-against-jayhawks-athletic-department-claiming-breach-of-contract/" om-event="New Desktop Design|College Football|Headline Stack|Headline 1">
+          <h3 class="article-list-stack-item-title">
+           Ex-KU coach sues school, claiming breach of contract
+          </h3>
+          <div class="article-list-stack-sport">
+           Barrett Sallee
+          </div>
+         </a>
+        </li>
+        <li class="article-list-stack-item">
+         <a href="/college-football/news/college-admissions-scandal-indictment-alleges-use-of-fake-usc-football-profiles-for-students/" om-event="New Desktop Design|College Football|Headline Stack|Headline 2">
+          <h3 class="article-list-stack-item-title">
+           Indictment alleges use of fake USC football profiles
+          </h3>
+          <div class="article-list-stack-sport">
+           Barrett Sallee
+          </div>
+         </a>
+        </li>
+        <li class="article-list-stack-item">
+         <a href="/college-football/news/ex-ohio-state-coach-urban-meyer-will-return-to-tv-in-2019-but-will-he-stay-there/" om-event="New Desktop Design|College Football|Headline Stack|Headline 3">
+          <h3 class="article-list-stack-item-title">
+           Urban Meyer returning to TV, but for how long?
+          </h3>
+          <div class="article-list-stack-sport">
+           Tom Fornelli
+          </div>
+         </a>
+        </li>
+        <li class="article-list-stack-item">
+         <a href="/college-football/news/florida-state-reportedly-fills-quarterback-hole-as-ex-wisconsin-qb-alex-hornibrook-set-to-transfer/" om-event="New Desktop Design|College Football|Headline Stack|Headline 4">
+          <h3 class="article-list-stack-item-title">
+           Ex-Wisconsin QB Hornibrook lands at FSU
+          </h3>
+          <div class="article-list-stack-sport">
+           Barrett Sallee
+          </div>
+         </a>
+        </li>
+        <li class="article-list-stack-item">
+         <a href="/college-football/news/judge-rules-ncaa-cant-cap-athlete-compensation-related-to-education-neither-side-happy-with-decision/" om-event="New Desktop Design|College Football|Headline Stack|Headline 5">
+          <h3 class="article-list-stack-item-title">
+           Neither side happy with compensation ruling
+          </h3>
+          <div class="article-list-stack-sport">
+           Dennis Dodd
+          </div>
+         </a>
+        </li>
+        <li class="article-list-stack-item">
+         <a href="/college-football/news/2019-sec-spring-football-schedule-practice-dates-game-times-tv-channels-for-alabama-georgia-etc/" om-event="New Desktop Design|College Football|Headline Stack|Headline 6">
+          <h3 class="article-list-stack-item-title">
+           2019 SEC spring football schedule, dates
+          </h3>
+          <div class="article-list-stack-sport">
+           Chip Patterson
+          </div>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="container">
+      <div class="row">
+       <div class="row">
+        <div class="col-12">
+         <div class="row">
+          <div class="col-9">
+          </div>
+          <div class="col-3">
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-12">
+         <div class="article-list-content-blocks-wrap">
+          <ul class="col-4">
+           <li class="article-list-content-block first-block">
+            <a aria-label="25 things to know as spring football begins" class="" href="/college-football/news/25-things-for-spring-the-college-football-names-battles-and-storylines-you-need-to-know/" om-event="New Desktop Design|College Football|Content Block 1|Image">
+             <div class="image-icon-overlay-wrap has-title">
+              <figure class="img">
+               <img alt="dabo-swinney-practice.jpg" class="is-lazy-image" data-lazy="https://sportshub.cbsistatic.com/i/r/2019/03/07/fae67803-6be6-4cf4-88ee-be1e219d6ac7/thumbnail/370x585/5be80ffbbb4affa81bdf99f8337f292c/dabo-swinney-practice.jpg" height="585" src="" width="370"/>
+              </figure>
+              <div class="image-icon-text-overlay">
+               <h3 class="image-icon-title">
+                25 things to know as spring football begins
+               </h3>
+               <div class="image-icon-dek">
+                From Trevor Lawrence to a new Transfer U, there's plenty to go over.
+               </div>
+              </div>
+             </div>
+            </a>
+           </li>
+           <li class="article-list-content-block">
+            <a aria-label="Mack Brown happy to be coaching again" class="" href="/college-football/news/north-carolinas-mack-brown-happy-to-be-called-coach-again-just-leave-the-ceo-part-in-texas/" om-event="New Desktop Design|College Football|Content Block 2|Image">
+             <div class="image-icon-overlay-wrap has-title">
+              <figure class="img">
+               <img alt="mack-brown-unc-podium.jpg" class="is-lazy-image" data-lazy="https://sportshub.cbsistatic.com/i/r/2018/11/29/8047af5e-254d-49cb-81ff-3af8003f76aa/thumbnail/370x208/79797dbfcc9ef6a0aeb7965d656663a6/mack-brown-unc-podium.jpg" height="208" src="" width="370"/>
+              </figure>
+              <div class="image-icon-text-overlay">
+               <h3 class="image-icon-title">
+                Mack Brown happy to be coaching again
+               </h3>
+              </div>
+             </div>
+            </a>
+           </li>
+          </ul>
+          <ul class="col-4 content-block-column" id="content-block-middle-column">
+           <li class="article-list-content-middle">
+            <div class="article-list-content-block-four" id="article-list-content-block-four">
+             <a class="" href="/college-football/news/big-ten-commish-jim-delany-to-retire-in-2020-after-30-years-on-the-job-but-who-will-replace-him/" om-event="New Desktop Design|College Football|Content Block 4|Image">
+              <div class="image-icon-overlay-wrap">
+               <figure class="img">
+                <img alt="jim-delany.jpg" class="is-lazy-image" data-lazy="https://sportshub.cbsistatic.com/i/r/2016/06/20/79415722-f394-44c9-b8ac-eb3ed2e9a6e6/thumbnail/370x208/e35a78ca1f70dcf2e9d5be0ca82ecce2/jimdelany.jpg" height="208" src="" width="370"/>
+               </figure>
+              </div>
+             </a>
+             <h3 class="article-list-content-block-subtitle">
+              <a class="" href="/college-football/news/big-ten-commish-jim-delany-to-retire-in-2020-after-30-years-on-the-job-but-who-will-replace-him/" om-event="New Desktop Design|College Football|Content Block 4|Headline">
+               Jim Delany stepping down, but who could be next?
+              </a>
+             </h3>
+             <div class="article-list-content-block-subdek">
+              Delany became the Big Ten commissioner in July 1989 and will retire in June 2020.
+             </div>
+            </div>
+           </li>
+           <ul class="article-list-wrapper">
+            <li class="article-list-item-wrap">
+             <div class="article-list-item">
+              <div class="article-list-item-image">
+               <a aria-label="Florida-Miami 2019 opener moved up one week to Aug. 24" class="" href="/college-football/news/florida-miami-receive-approval-to-open-2019-season-a-week-early-on-aug-24-in-orlando/" om-event="New Desktop Design|College Football|Content Block 5|Image">
+                <div class="image-icon-overlay-wrap">
+                 <figure class="img">
+                  <img alt="NCAA Football: Eastern Kentucky at Florida" class="is-lazy-image" data-lazy="https://sportshub.cbsistatic.com/i/r/2018/04/06/09d18f3b-beea-42d9-9ba8-9b7863d04058/thumbnail/100x100/bdb8169496bb52410f324f1802c41554/usatsi-8274846.jpg" height="100" src="" width="100"/>
+                 </figure>
+                </div>
+               </a>
+              </div>
+              <div class="article-list-item-content">
+               <h3 class="article-list-item-title">
+                <a class="" href="/college-football/news/florida-miami-receive-approval-to-open-2019-season-a-week-early-on-aug-24-in-orlando/" om-event="New Desktop Design|College Football|Content Block 5|Headline">
+                 Florida-Miami 2019 opener moved up one week to Aug. 24
+                </a>
+               </h3>
+               <div class="article-list-item-details">
+                Kevin Skiver
+               </div>
+              </div>
+             </div>
+            </li>
+            <li class="article-list-item-wrap">
+             <div class="article-list-item">
+              <div class="article-list-item-image">
+               <a aria-label="Ex-Texas A&amp;M QB Nick Starkel transferring to Arkansas" class="" href="/college-football/news/former-texas-a-m-quarterback-nick-starkel-announces-arkansas-as-transfer-destination/" om-event="New Desktop Design|College Football|Content Block 5|Image">
+                <div class="image-icon-overlay-wrap">
+                 <figure class="img">
+                  <img alt="nick-starkel.jpg" class="is-lazy-image" data-lazy="https://sportshub.cbsistatic.com/i/r/2019/03/05/e5b44974-05e3-4951-b2c9-37f3446f6adc/thumbnail/100x100/ce0ff0ef41b8cad960ebcd8e29fbf588/nick-starkel.jpg" height="100" src="" width="100"/>
+                 </figure>
+                </div>
+               </a>
+              </div>
+              <div class="article-list-item-content">
+               <h3 class="article-list-item-title">
+                <a class="" href="/college-football/news/former-texas-a-m-quarterback-nick-starkel-announces-arkansas-as-transfer-destination/" om-event="New Desktop Design|College Football|Content Block 5|Headline">
+                 Ex-Texas A&amp;M QB Nick Starkel transferring to Arkansas
+                </a>
+               </h3>
+               <div class="article-list-item-details">
+                Ben Kercheval
+               </div>
+              </div>
+             </div>
+            </li>
+            <li class="article-list-item-wrap">
+             <div class="article-list-item">
+              <div class="article-list-item-image">
+               <a aria-label="FCS champs North Dakota State get fast food at White House" class="" href="/college-football/news/north-dakota-state-gets-served-fast-food-during-white-house-visit-with-president-trump/" om-event="New Desktop Design|College Football|Content Block 5|Image">
+                <div class="image-icon-overlay-wrap">
+                 <figure class="img">
+                  <img alt="NCAA Football: Division I Football Championship-Eastern Washington vs North Dakota State" class="is-lazy-image" data-lazy="https://sportshub.cbsistatic.com/i/r/2019/03/04/c66b6c4c-dbbf-4d0c-8c78-d0edd36f8baf/thumbnail/100x100/bfcf02088858207ae8b0960dceb50458/trump-north-dakota-state.jpg" height="100" src="" width="100"/>
+                 </figure>
+                </div>
+               </a>
+              </div>
+              <div class="article-list-item-content">
+               <h3 class="article-list-item-title">
+                <a class="" href="/college-football/news/north-dakota-state-gets-served-fast-food-during-white-house-visit-with-president-trump/" om-event="New Desktop Design|College Football|Content Block 5|Headline">
+                 FCS champs North Dakota State get fast food at White House
+                </a>
+               </h3>
+               <div class="article-list-item-details">
+                Ben Kercheval
+               </div>
+              </div>
+             </div>
+            </li>
+            <li class="article-list-item-wrap">
+             <div class="article-list-item">
+              <div class="article-list-item-image">
+               <a aria-label="Friday Five: Teams that can escape the cellar in the 2019 season" class="" href="/college-football/news/friday-five-college-football-teams-most-likely-to-escape-the-cellar-in-the-2019-season/" om-event="New Desktop Design|College Football|Content Block 5|Image">
+                <div class="image-icon-overlay-wrap">
+                 <figure class="img">
+                  <img alt="jeremy-pruitt-tennessee-getty.jpg" class="is-lazy-image" data-lazy="https://sportshub.cbsistatic.com/i/r/2018/10/19/1d15ecb0-a14c-47dc-a30e-294aa14889a8/thumbnail/100x100/bc1c5e11450041da9e40c4872b672c11/jeremy-pruitt-tennessee-getty.jpg" height="100" src="" width="100"/>
+                 </figure>
+                </div>
+               </a>
+              </div>
+              <div class="article-list-item-content">
+               <h3 class="article-list-item-title">
+                <a class="" href="/college-football/news/friday-five-college-football-teams-most-likely-to-escape-the-cellar-in-the-2019-season/" om-event="New Desktop Design|College Football|Content Block 5|Headline">
+                 Friday Five: Teams that can escape the cellar in the 2019 season
+                </a>
+               </h3>
+               <div class="article-list-item-details">
+                Tom Fornelli
+               </div>
+              </div>
+             </div>
+            </li>
+           </ul>
+          </ul>
+          <ul class="col-4">
+           <li class="article-list-content-block ad-item">
+            <div class="ad-mpu-home-arena-flex" data-ad="mpu-home-arena-flex" id="mpu-home-arena-flex-40268a2e0bef1">
+             <script>
+              window.console && console.log && console.log("ADS: queuing mpu-home-arena-flex-40268a2e0bef1 for display");
+        var cbsiGptDivIds = cbsiGptDivIds || [];
+        cbsiGptDivIds.push("mpu-home-arena-flex-40268a2e0bef1");
+             </script>
+            </div>
+           </li>
+           <li class="article-list-content-block last-block">
+            <a aria-label="13 breakout players to watch during spring" class="" href="/college-football/news/college-footballs-13-breakout-candidates-and-replacements-as-spring-practice-2019-begins/" om-event="New Desktop Design|College Football|Content Block 3|Image">
+             <div class="image-icon-overlay-wrap has-title">
+              <figure class="img">
+               <img alt="journey-brown-penn-state.jpg" class="is-lazy-image" data-lazy="https://sportshub.cbsistatic.com/i/r/2019/03/08/18f878f6-e771-4899-bb55-38f53b30c4a8/thumbnail/370x510/457aecdd29efc57253790f8e280f8eb2/journey-brown-penn-state.jpg" height="510" src="" width="370"/>
+              </figure>
+              <div class="image-icon-text-overlay">
+               <h3 class="image-icon-title">
+                13 breakout players to watch during spring
+               </h3>
+               <div class="image-icon-dek">
+                As college football says goodbye to some of its top talents, here are players who should step up.
+               </div>
+              </div>
+             </div>
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-12">
+         <section class="arena-pack-list-wrapper load-more-content-wrapper">
+          <div data-component="loadMore" data-load-more-options='{"loader":{"classes":{"base":"button-type-lines"},"text":{"idle":"See More"},"tracking":"New Desktop Design|College Football|See More","omEventTarget":"arena-pack-list-wrapper load-more-content-wrapper"},"url":"\/component\/load-more\/xhr\/","data":{"endpoint":"\/api\/component\/listing\/1f3b8082-5f1a-4662-b8c3-7b174cb29b47\/content\/6964176a-d570-44ef-bab0-0db2785ed610","params":[],"view":"door_9_pack","familyName":"listing","typeName":"filtered_listing","offset":47,"initialLimit":30,"colspan":"","lastAssetId":"","twoWeekLimit":false,"limit":30,"template":"SportsMediaComponentBundle:Core:article_list_pack.html.twig","pushStateOffset":0,"itemsPerRow":3,"trackingXhrArray":{"1":"topic_landing","2":"content_block","3":"item"},"trackingXhrReplaceArray":{"1":"College Football"},"dedup":["e9810430-d928-4a21-a591-5562e3c72fb1","2615bfbb-109b-49e0-bd43-a388b04cd61c","71054df9-0217-453a-94fc-b423ed177a0c","6fb0e8c3-cf94-4fb4-a732-d7dd23f1b4c4","ee93bfef-98d6-42f3-af8a-d04cc8a39a90","1098a824-b5a5-43fe-9ff8-affb893cf8ad","50c600c5-6135-4247-80dc-4c5d4ba3441c","3081040b-3b47-4f5a-b6c7-a72f9b0cc1f2","003fc5b4-dc4a-4e83-86aa-ce959eacc55d","a84a1b09-c416-4113-a569-32986e110417","14749bd4-ce0f-4f7e-a0c0-87da8d057c83","88ca98b3-9551-4dbc-959f-52d9e9f75bb8","bc82729f-e806-4835-bec2-0c21b0e76ce9","f2eaa823-246a-43a1-84a0-ab890650fb0f","13490715-7610-41a8-8cc6-adfb50c7ae82","ca17ac1a-058b-4187-b6bd-c4ad659218c0","d3704659-52b1-4d0d-a7c5-0f1be7189566"]},"numPinned":1,"pushState":{"baseRoute":"\/college-football\/","route":"\/college-football\/{page}\/","enabled":true,"currentPage":1}}' id="">
+          </div>
+         </section>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-12">
+         <section class="Newsletter-container">
+          <div class="Newsletter-image">
+           <figure class="img">
+            <img alt="" class="is-lazy-image" data-lazy="https://sportshub.cbsistatic.com/i/r/2018/05/03/5ef37a4c-ca1d-43ef-a382-5fa53c9ede38/thumbnail/170x170/ab10a71039d8bbfd58f0ac9b10f67601/hq-daily.png" height="170" src="" width="170"/>
+           </figure>
+          </div>
+          <div class="Newsletter" data-component="newsletterSignUp" data-newsletter-sign-up-options='{"containerId":"#Newsletter","xhr":"\/fantasy\/newsletter-sign-up\/xhr\/"}' id="Newsletter">
+           <div class="Newsletter-stateNotSent">
+            <h3 class="Newsletter-title">
+             CBS Sports HQ Daily Newsletter
+            </h3>
+            <h4 class="Newsletter-description">
+             Get the best highlights and stories - yeah, just the good stuff handpicked by our team to start your day.
+            </h4>
+            <form action="#" class="Newsletter-form Form-base" method="post" name="newsletterForm">
+             <input name="action" type="hidden" value="optIn"/>
+             <input name="custId" type="hidden" value=""/>
+             <input name="masterProductId" type="hidden" value="23708"/>
+             <input name="mCode" type="hidden" value="m23661"/>
+             <input name="source" type="hidden" value="nlarena"/>
+             <input name="userLogin" type="hidden" value=""/>
+             <input class="Newsletter-emailAddress Form-inputText" name="emailAddress" placeholder="Email Address" required="" type="text" value=""/>
+             <input class="Newsletter-submit Form-submitButton--dark" disabled="" type="submit" value="Sign Up"/>
+            </form>
+            <p class="Newsletter-checkbox">
+             <label class="CheckButton CheckButton-newsletter" data-checkbox-expanded-options='{"checkboxId":"CheckButton-checkbox","tableIds":""}' data-component="checkboxExpanded">
+              <input class="CheckButton-checkbox" id="CheckButton-checkbox" name="check" type="checkbox"/>
+              <span class="CheckButton-checkmark CheckButton-newsletter">
+              </span>
+              <span class="CheckButtonText">
+               I agree that CBS Sports can send me the "CBS Sports HQ Daily Newsletter" newsletter.
+              </span>
+             </label>
+            </p>
+            <div class="Newsletter-seeAll">
+             <a class="" href="/newsletters/">
+              See All Newsletters
+             </a>
+            </div>
+           </div>
+           <div class="Newsletter-stateCheck">
+            Please check the opt-in box to acknowledge that you would like to subscribe.
+           </div>
+           <div class="Newsletter-stateSent">
+            <div class="Newsletter-icon">
+             <span class="icon-moon-check">
+             </span>
+            </div>
+            <h3 class="Newsletter-title">
+             Thanks for signing up!
+            </h3>
+            <h4 class="Newsletter-description">
+             Keep an eye on your inbox for the latest sports news.
+            </h4>
+           </div>
+           <div class="Newsletter-stateFail">
+            <h3 class="Newsletter-title">
+             Sorry!
+            </h3>
+            <h4 class="Newsletter-description">
+             There was an error processing your subscription.
+            </h4>
+           </div>
+          </div>
+         </section>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-12">
+         <div class="row">
+          <div class="col-8">
+           <div class="article-list-block door-shopping">
+            <header class="article-list-block-top">
+             <h5 class="Card-title article-list-shop-title">
+              <span class="title-text">
+               CBS Sports Shop
+              </span>
+              <span class="Card-titlePromo title-text-side">
+               <a href="http://shop.cbssports.com/CBS_Clemson_Tigers/source/bm-referral_CFP_Champs_CBS_NCAAIMAGE" target="_blank">
+                Shop NCAA FB Gear
+               </a>
+              </span>
+             </h5>
+            </header>
+            <ul class="door-shopping-list">
+             <li class="door-shopping-item">
+              <div class="door-shopping-inner">
+               <div class="door-shopping-item-image">
+                <a class="" href="http://shop.cbssports.com/CBS_Clemson_Tigers/source/bm-referral_CFP_Champs_CBS_NCAAIMAGE" target="_blank">
+                 <div class="image-icon-overlay-wrap">
+                  <figure class="img">
+                   <img alt="thumb.jpg" class="is-lazy-image" data-lazy="https://sportshub.cbsistatic.com/i/r/2019/01/08/406c14a5-8bba-4aac-a224-4fd5966739c5/thumbnail/170x170/dc530507ab0355fd852666369dfb8cb6/thumb.jpg" height="170" src="" width="170"/>
+                  </figure>
+                 </div>
+                </a>
+               </div>
+               <div class="door-shopping-item-title">
+                <a class="external-link" href="http://shop.cbssports.com/CBS_Clemson_Tigers/source/bm-referral_CFP_Champs_CBS_NCAAIMAGE" target="_blank">
+                 Clemson National Champions Shirt
+                </a>
+               </div>
+              </div>
+             </li>
+             <li class="door-shopping-item">
+              <div class="door-shopping-inner">
+               <div class="door-shopping-item-image">
+                <a class="" href="http://shop.cbssports.com/CBS_Clemson_Tigers/source/bm-referral_CFP_Champs_CBS_NCAAIMAGE" target="_blank">
+                 <div class="image-icon-overlay-wrap">
+                  <figure class="img">
+                   <img alt="thumb.jpg" class="is-lazy-image" data-lazy="https://sportshub.cbsistatic.com/i/r/2019/01/08/f6818938-3d5a-4d43-908e-c154953ce0b9/thumbnail/170x170/05feaf6a8e0a01783c375edff28338c7/thumb.jpg" height="170" src="" width="170"/>
+                  </figure>
+                 </div>
+                </a>
+               </div>
+               <div class="door-shopping-item-title">
+                <a class="external-link" href="http://shop.cbssports.com/CBS_Clemson_Tigers/source/bm-referral_CFP_Champs_CBS_NCAAIMAGE" target="_blank">
+                 Clemson National Champions Hat
+                </a>
+               </div>
+              </div>
+             </li>
+             <li class="door-shopping-item">
+              <div class="door-shopping-inner">
+               <div class="door-shopping-item-image">
+                <a class="" href="http://shop.cbssports.com/College_Football_Playoff_Gear/source/bm-referral_CBS_NCAAIMAGE_Football_Playoffs" target="_blank">
+                 <div class="image-icon-overlay-wrap">
+                  <figure class="img">
+                   <img alt="thumb.jpg" class="is-lazy-image" data-lazy="https://sportshub.cbsistatic.com/i/r/2019/01/08/b1fa8952-153a-41c4-9206-1e4b03cefdca/thumbnail/170x170/682adcc60f5cb462e4ed9b32b5a73262/thumb.jpg" height="170" src="" width="170"/>
+                  </figure>
+                 </div>
+                </a>
+               </div>
+               <div class="door-shopping-item-title">
+                <a class="external-link" href="http://shop.cbssports.com/College_Football_Playoff_Gear/source/bm-referral_CBS_NCAAIMAGE_Football_Playoffs" target="_blank">
+                 Clemson National Champions Collectibles
+                </a>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+          <div class="col-4">
+           <div class="ad-mpu-middle" data-ad="mpu-middle" id="mpu-middle-40268a2e0bef1">
+            <script>
+             window.console && console.log && console.log("ADS: queuing mpu-middle-40268a2e0bef1 for display");
+        var cbsiGptDivIds = cbsiGptDivIds || [];
+        cbsiGptDivIds.push("mpu-middle-40268a2e0bef1");
+            </script>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-12">
+         <script type="text/javascript">
+          window.SportsPageVars.tracking.taboolaPlacement = "desktop-5x1-main";
+         </script>
+         <div class="RecommendedRecirc recommended-recirc taboola-recommends not-article">
+          <div class="Card-title RecommendedRecirc-title recommended-title taboola-title">
+           <span class="title-text">
+            Around the Web
+           </span>
+           <span class="Card-titlePromo title-text-side">
+            <a href="https://popup.taboola.com/en/" rel="nofollow" target="_blank">
+             Promoted by Taboola
+             <span class="recirc-ad-icon">
+             </span>
+            </a>
+           </span>
+          </div>
+          <div data-taboola='{"mode":"thumbnails-c","container":"taboola-homepage-thumbnails","placement":"desktop-5x1-main"}' id="taboola-homepage-thumbnails">
+          </div>
+         </div>
+         <div class="ad-leader-bottom" data-ad="leader-bottom" id="leader-bottom-40268a2e0bef1">
+          <script>
+           window.console && console.log && console.log("ADS: queuing leader-bottom-40268a2e0bef1 for display");
+        var cbsiGptDivIds = cbsiGptDivIds || [];
+        cbsiGptDivIds.push("leader-bottom-40268a2e0bef1");
+          </script>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </main>
+   </div>
+   <footer class="cbs-site-footer" id="cbs-site-footer">
+    <div class="site-footer-row">
+     <div class="site-footer-branding">
+      <span aria-label="CBS Sports Digital" class="site-footer-logo" role="img" tabindex="0" title="CBS Sports Digital">
+      </span>
+     </div>
+    </div>
+    <div class="site-footer-row">
+     <ul class="SocialIconsBar">
+      <li>
+       <a aria-label="Facebook" class="SocialButton SocialButton--circle SocialButton-- icon-moon-facebook" href="https://www.facebook.com/cbssports/" rel="nofollow" target="_blank" title="Facebook">
+       </a>
+      </li>
+      <li>
+       <a aria-label="Twitter" class="SocialButton SocialButton--circle SocialButton-- icon-moon-twitter" href="https://twitter.com/cbssports/" rel="nofollow" target="_blank" title="Twitter">
+       </a>
+      </li>
+      <li>
+       <a aria-label="Google+" class="SocialButton SocialButton--circle SocialButton-- icon-moon-google-plus2" href="https://plus.google.com/+CBSSportscom/posts/" rel="nofollow" target="_blank" title="Google+">
+       </a>
+      </li>
+      <li>
+       <a aria-label="Youtube" class="SocialButton SocialButton--circle SocialButton-- icon-moon-youtube-play" href="https://www.youtube.com/user/cbssports/" rel="nofollow" target="_blank" title="Youtube">
+       </a>
+      </li>
+      <li>
+       <a aria-label="Instagram" class="SocialButton SocialButton--circle SocialButton-- icon-moon-instagram" href="https://instagram.com/cbssports/" rel="nofollow" target="_blank" title="Instagram">
+       </a>
+      </li>
+      <li>
+       <a aria-label="Pinterest" class="SocialButton SocialButton--circle SocialButton-- icon-moon-pinterest" href="https://www.pinterest.com/cbssports/" rel="nofollow" target="_blank" title="Pinterest">
+       </a>
+      </li>
+      <li>
+       <a aria-label="Flipboard" class="SocialButton SocialButton--circle SocialButton-- icon-moon-flipboard" href="https://flipboard.com/@cbssports/?utm_source=cbssports&amp;utm_medium=follow&amp;utm_campaign=tools" rel="nofollow" target="_blank" title="Flipboard">
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="site-footer-row">
+     <ul class="site-footer-links">
+      <li>
+       <a href="https://www.cbssports.com/help" target="_blank" title="Help">
+        Help
+       </a>
+      </li>
+      <li>
+       <a href="https://www.cbssports.com/info/aboutus" target="_blank" title="About Us">
+        About Us
+       </a>
+      </li>
+      <li>
+       <a href="http://www.cbsinteractive.com/careers" target="_blank" title="Careers">
+        Careers
+       </a>
+      </li>
+      <li>
+       <a href="http://www.cbsinteractive.com/advertise/" target="_blank" title="Advertise">
+        Advertise
+       </a>
+      </li>
+      <li>
+       <a href="https://www.cbssports.com/sitemap" target="_blank" title="Site Map">
+        Site Map
+       </a>
+      </li>
+      <li>
+       <a href="https://www.cbssports.com/settings/newsletters" target="_blank" title="Newsletters">
+        Newsletters
+       </a>
+      </li>
+      <li>
+       <a href="https://www.cbssports.com/mobile" target="_blank" title="Mobile Apps">
+        Mobile Apps
+       </a>
+      </li>
+      <li>
+       <a href="http://collegenetwork.cbssports.com/" target="_blank" title="College Network">
+        College Network
+       </a>
+      </li>
+      <li>
+       <a href="http://legalterms.cbsinteractive.com/adchoice" target="_blank" title="Ad Choice">
+        Ad Choice
+       </a>
+      </li>
+      <li>
+       <a href="https://www.cbssports.com/info/closed-caption" target="_blank" title="Closed Captioning">
+        Closed Captioning
+       </a>
+      </li>
+      <li>
+       <a href="http://legalterms.cbsinteractive.com/privacy" target="_blank" title="Privacy">
+        Privacy
+       </a>
+      </li>
+      <li>
+       <a href="http://legalterms.cbsinteractive.com/terms-of-use" target="_blank" title="Terms">
+        Terms
+       </a>
+      </li>
+      <li>
+       <a href="http://legalterms.cbsinteractive.com/eula" target="_blank" title="Mobile User Agreement">
+        Mobile User Agreement
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="site-footer-row">
+     <div class="site-footer-partners">
+      <div aria-label="Commissioner.com" class="site-footer-button button1" role="img" tabindex="0" title="Commissioner.com">
+      </div>
+      <div aria-label="Commissioner.com" class="site-footer-button button2" role="img" tabindex="0" title="Commissioner.com">
+      </div>
+      <div aria-label="Golfweb.com" class="site-footer-button button3" role="img" tabindex="0" title="Golfweb.com">
+      </div>
+     </div>
+    </div>
+    <div class="site-footer-copyright">
+     <p class="site-footer-dates">
+      © 2004-2019 CBS Interactive. All Rights Reserved.
+     </p>
+     <p>
+      CBS Sports is a registered trademark of CBS Broadcasting Inc. Commissioner.com is a registered trademark of CBS Interactive Inc.
+     </p>
+     <p>
+      Images by Getty Images and US Presswire
+     </p>
+    </div>
+   </footer>
+  </div>
+  <script charset="utf-8" data-requirecontext="_" data-requiremodule="jquery" src="https://sportsfly.cbsistatic.com/fly-121/bundles/sportsmediajs/js-build/jquery.js" type="text/javascript">
+  </script>
+  <script charset="utf-8" data-requirecontext="_" data-requiremodule="footer.lite" src="https://sportsfly.cbsistatic.com/fly-121/bundles/sportsmediajs/js-build/footer.lite.js" type="text/javascript">
+  </script>
+  <script async="" charset="utf-8" data-requirecontext="_" data-requiremodule="main.desktop" src="https://sportsfly.cbsistatic.com/fly-121/bundles/sportsmediajs/js-build/main.desktop.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"0710d28d2a","applicationID":"159419744","transactionName":"MgEHZ0ICW0JZUBYMDgtLJFBEClpfF2ASChMRFyhWVApUYltcEAASJxELV1wGD3JXXhIKDwAKEUAKD1pQXGAjJCYmCwhDXw1QX0w=","queueTime":0,"applicationTime":1847,"atts":"HkYEEQoYSEw=","errorBeacon":"bam.nr-data.net","agent":""}
+  </script>
+ </body>
+</html>
